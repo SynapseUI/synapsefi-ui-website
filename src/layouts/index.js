@@ -1,12 +1,40 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
-import Header from '../components/header'
-import './index.css'
+// -----------------------------------------------------------------------------------------
+// ----------------------------------- Component Import ------------------------------------
+// -----------------------------------------------------------------------------------------
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
+
+// -----------------------------------------------------------------------------------------
+// ----------------------------------- Styles Import ------------------------------------
+// -----------------------------------------------------------------------------------------
+// import './index.css';
+import './sass/main.scss';
+import { relative } from 'path';
+
+// -----------------------------------------------------------------------------------------
+// ------------------------------------ Styled Components ----------------------------------
+// -----------------------------------------------------------------------------------------
+const PositionSidebar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--width-sidebar);
+  min-height: 100vh;
+`;
+
+const StylePage = styled.div`
+  padding: var(--height-header) 0 0 var(--width-sidebar);
+  /* background-color: red; */
+  margin: 48px 72px;
+`;
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div style={{ position: 'relative' }}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -14,25 +42,17 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
+    <Sidebar siteTitle={data.site.siteMetadata.title}/>
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+    <StylePage>{children()}</StylePage>
   </div>
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query SiteTitleQuery {
@@ -42,4 +62,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

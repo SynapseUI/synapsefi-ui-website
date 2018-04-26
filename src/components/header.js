@@ -1,20 +1,21 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
+
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: var(--color-teal);
+  height: var(--height-header);
+  width: 100vw;
+`;
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
+  <Wrapper>
+    <div>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -27,7 +28,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
-  </div>
-)
+  </Wrapper>
+);
 
-export default Header
+export default Header;
