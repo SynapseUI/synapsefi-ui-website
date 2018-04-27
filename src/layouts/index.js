@@ -48,7 +48,6 @@ const Layout = ({ children, data, location}) => (
     <StylePage>
       <PageHeader title={location.pathname}/>
       {children()}
-      {console.log('location: ', location)}
     </StylePage>
   </div>
 );
