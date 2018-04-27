@@ -8,6 +8,7 @@ import styled, { injectGlobal } from 'styled-components';
 // -----------------------------------------------------------------------------------------
 import Header from '../components/header';
 import Sidebar from '../components/sidebar';
+import PageHeader from '../components/PageHeader';
 
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Styles Import ------------------------------------
@@ -33,7 +34,7 @@ const StylePage = styled.div`
   margin: 48px 72px;
 `;
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, data, location}) => (
   <div style={{ position: 'relative' }}>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -41,10 +42,14 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-    />
+      />
     <Sidebar siteTitle={data.site.siteMetadata.title} />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <StylePage>{children()}</StylePage>
+    <StylePage>
+      <PageHeader title={location.pathname}/>
+      {children()}
+      {console.log('location: ', location)}
+    </StylePage>
   </div>
 );
 
