@@ -1,5 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'gatsby-link';
+
+// -----------------------------------------------------------------------------------------
+// ------------------------------------ Data Import ----------------------------------------
+// -----------------------------------------------------------------------------------------
+import itemsSidebar from '../helpers/itemsSidebar';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -8,6 +14,9 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
+  font-size: 1.6rem;
+  line-height: 1;
 
   width: var(--width-sidebar);
   min-height: 100vh;
@@ -23,7 +32,20 @@ const HeaderTitle = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  font-size: 2.4rem;
+  font-weight: 300;
+  padding-left: 1.6rem;
+`;
+
+const NavbarItem = styled.div`
+  cursor: pointer;
+  padding: var(--padding-sidebar-item);
+
+  &:hover {
+    color: var(--color-default-font);
+    background-color: var(--color-navbar-hover);
+  }
 `;
 
 const Sidebar = ({ siteTitle }) => {
@@ -31,6 +53,13 @@ const Sidebar = ({ siteTitle }) => {
   return (
     <Wrapper>
       <HeaderTitle>{siteTitle}</HeaderTitle>
+      {itemsSidebar.map(({ text, linkName }) => {
+        return (
+          <Link to={linkName}>
+            <NavbarItem key={text}>{text}</NavbarItem>
+          </Link>
+        );
+      })}
     </Wrapper>
   );
 };

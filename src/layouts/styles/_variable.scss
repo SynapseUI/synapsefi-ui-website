@@ -38,12 +38,16 @@
   --color-primary-dark: var(--color-dark-teal);
   --color-default-font: var(--color-dark);
 
+  // specific colors
+  --color-navbar-hover: #e8e9e8;
+
   // components colors
   --bg-color-sidebar: #242931;
   --bg-color-header: #049cb0;
 
   // sizes
-  --width-sidebar: 256px;
-  --height-header: 64px;
+  --width-sidebar: 25.6rem;
+  --height-header: 6.4rem;
 
+  --padding-sidebar-item: 1.8rem;
 }

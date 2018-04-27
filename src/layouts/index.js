@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Component Import ------------------------------------
@@ -12,8 +12,8 @@ import Sidebar from '../components/sidebar';
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Styles Import ------------------------------------
 // -----------------------------------------------------------------------------------------
-// import './index.css';
-import './sass/main.scss';
+import './styles/_variable.scss';
+import './styles/baseStyle';
 import { relative } from 'path';
 
 // -----------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Sidebar siteTitle={data.site.siteMetadata.title}/>
+    <Sidebar siteTitle={data.site.siteMetadata.title} />
     <Header siteTitle={data.site.siteMetadata.title} />
     <StylePage>{children()}</StylePage>
   </div>
