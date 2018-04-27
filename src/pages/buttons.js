@@ -6,6 +6,7 @@ import Button from '../components/Button';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/styles/hljs';
+import axios from 'axios';
 // const Component = () => {
 
 // }
@@ -22,8 +23,13 @@ const Wrapper = styled.div`
 
 const codeString = '(num) => num + 1';
 
-const Buttons = () => (
-  <Wrapper>
+const Buttons = () => {
+  axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then((data) => {
+      console.log('data: ', data.data);
+
+    })
+  return (<Wrapper>
     <Button> Default </Button>
     <Button primary> Primary </Button>
     <Button secondary> Secondary </Button>
@@ -34,7 +40,7 @@ const Buttons = () => (
     <SyntaxHighlighter language="javascript" style={docco}>
       {codeString}
     </SyntaxHighlighter>;
-  </Wrapper>
-);
+  </Wrapper>)
+};
 
 export default Buttons;
