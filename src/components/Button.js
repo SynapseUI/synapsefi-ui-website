@@ -18,6 +18,7 @@ const commonBtnStyle = `
   cursor: pointer;
   border-radius: 3px;
   font-weight: 100;
+  transition: all .2s;
 `;
 
 // -----------------------------------------------------------------------------------------
