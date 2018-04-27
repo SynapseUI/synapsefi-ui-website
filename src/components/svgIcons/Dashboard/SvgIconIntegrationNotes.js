@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SvgIconCipDocumentsAndLimits = () => {
+const SvgIconIntegrationNotes = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 32 28">
       <g fill="#000" fillRule="nonzero">
@@ -11,4 +11,4 @@ const SvgIconCipDocumentsAndLimits = () => {
   );
 };
 
-export default SvgIconCipDocumentsAndLimits;
+export default SvgIconIntegrationNotes;

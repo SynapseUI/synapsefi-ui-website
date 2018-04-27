@@ -38,8 +38,16 @@ const IconGroupWrapper = styled.div`
 
 const Icon = styled.div`align-self: end;`;
 
+
+import SvgIconCipDocumentsAndLimits from '../components/svgIcons/Dashboard/SvgIconCipDocumentsAndLimits';
+
 const SvgIcons = () => (
   <div>
+    <SvgIconCipDocumentsAndLimits />
+  <div>
+
+  </div>
+
     {dataForSvgIconPage.map(section => {
       return _.map(section, (sectionItems, sectionTitle) => {
         return (
