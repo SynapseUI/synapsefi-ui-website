@@ -2,15 +2,39 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import jsx from 'react-syntax-highlighter/languages/prism/jsx';
+
+import {
+  coy,
+  dark,
+  funky,
+  okaidia,
+  solarizedlight,
+  tomorrow,
+  twilight,
+  prism,
+  atomDark,
+  base16AteliersulphurpoolLight,
+  cb,
+  darcula,
+  duotoneDark,
+  duotoneEarth,
+  duotoneForest,
+  duotoneLight,
+  duotoneSea,
+  duotoneSpace,
+  ghcolors,
+  hopscotch,
+  pojoaque,
+  vs,
+  xonokai,
+} from 'react-syntax-highlighter/styles/prism';
+// import docco from 'react-syntax-highlighter/styles/docco';
+
+registerLanguage('jsx', jsx);
+
 import Button from '../components/Button';
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/styles/hljs';
-import axios from 'axios';
-// const Component = () => {
-
-// }
-
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
 // -----------------------------------------------------------------------------------------
@@ -21,15 +45,14 @@ const Wrapper = styled.div`
   justify-items: start;
 `;
 
-const codeString = '(num) => num + 1';
+const StyledSyntax = styled(SyntaxHighlighter)`
+  /* width: 100%; */
+  font-size: 2rem;
+  padding: 2rem;
+  
+`;
 
-const Buttons = () => {
-  axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then((data) => {
-      console.log('data: ', data.data);
-
-    })
-  return (<Wrapper>
+const codeString = `<Wrapper>
     <Button> Default </Button>
     <Button primary> Primary </Button>
     <Button secondary> Secondary </Button>
@@ -37,10 +60,70 @@ const Buttons = () => {
     <Button remove> Remove </Button>
     <Button isDisabled> Disable </Button>
     <Button isLoading> Loading </Button>
-    <SyntaxHighlighter language="javascript" style={docco}>
+    <StyledSyntax language="javascript" style={docco}>
       {codeString}
-    </SyntaxHighlighter>;
-  </Wrapper>)
+    </StyledSyntax>;
+  </Wrapper>
+`;
+
+
+
+const styleNames = [
+  coy,
+dark,
+funky,
+okaidia,
+solarizedlight,
+tomorrow,
+twilight,
+prism,
+atomDark,
+base16AteliersulphurpoolLight,
+cb,
+darcula,
+duotoneDark,
+duotoneEarth,
+duotoneForest,
+duotoneLight,
+duotoneSea,
+duotoneSpace,
+ghcolors,
+hopscotch,
+pojoaque,
+vs,
+xonokai,
+];
+
+const PRE = 'pre[class*="language-"]'
+const CODE = 'code[class*="language-"]'
+
+dark[PRE]['background'] = 'var(--bg-color-sidebar)';
+dark[PRE]['border'] = 'none';
+dark[PRE]['borderRadius'] = 'none';
+dark[CODE]['textShadow'] = 'none';
+
+console.log('dark: ', dark[PRE]);
+
+
+const Buttons = () => {
+  return (
+    <Wrapper>
+      <Button> Default </Button>
+      <Button primary> Primary </Button>
+      <Button secondary> Secondary </Button>
+      <Button tertiary> Tertiary </Button>
+      <Button remove> Remove </Button>
+      <Button isDisabled> Disable </Button>
+      <Button isLoading> Loading </Button>
+      {styleNames.map((styleName, idx) => {
+        return (
+          <StyledSyntax key={idx} language="jsx" style={styleName}>
+            {codeString}
+          </StyledSyntax>
+        );
+      })}
+    </Wrapper>
+  );
 };
 
 export default Buttons;

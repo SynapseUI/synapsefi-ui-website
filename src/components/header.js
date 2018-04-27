@@ -11,6 +11,8 @@ const Wrapper = styled.div`
   background-color: var(--color-teal);
   height: var(--height-header);
   width: 100vw;
+
+  z-index: 99;
 `;
 
 const Header = ({ siteTitle }) => (
