@@ -13,7 +13,7 @@ import PageHeader from '../components/PageHeader';
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Styles Import ------------------------------------
 // -----------------------------------------------------------------------------------------
-import './styles/_variable.scss';
+import './styles/main.scss';
 import './styles/baseStyle';
 import { relative } from 'path';
 

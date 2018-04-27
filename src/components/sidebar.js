@@ -55,8 +55,8 @@ const Sidebar = ({ siteTitle }) => {
       <HeaderTitle>{siteTitle}</HeaderTitle>
       {itemsSidebar.map(({ text, linkName }) => {
         return (
-          <Link to={linkName}>
-            <NavbarItem key={text}>{text}</NavbarItem>
+          <Link to={linkName} key={text}>
+            <NavbarItem>{text}</NavbarItem>
           </Link>
         );
       })}
