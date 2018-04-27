@@ -1,5 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+
+
+// -----------------------------------------------------------------------------------------
+// -------------------------------- Synapse Svg Icons Style Related-------------------------
+// -----------------------------------------------------------------------------------------
+const rotateCounterClockwise = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+`;
+
+// const decreaseLogoSizeBy = 0.7;
+
+// const StyledSynpaseIcon = styled.svg`
+//   width: calc(${mediumHeight} * ${decreaseLogoSizeBy});
+//   animation: ${rotateCounterClockwise} 1.5s linear infinite;
+
+//   fill: var(--color-teal);
+
+//   ${props => props.small && css`width: calc(${smallHeight} * ${decreaseLogoSizeBy});`};
+//   ${props => props.medium && css`width: calc(${mediumHeight} * ${decreaseLogoSizeBy});`};
+//   ${props => props.large && css`width: calc(${largeHeight} * ${decreaseLogoSizeBy});`};
+// `;
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -8,11 +31,18 @@ const SvgWrapper = styled.svg`
   width: 4rem;
   height: 4rem;
   fill: var(--color-teal);
+
+  ${props => props.size && css`width: ${props.size}`};
+  ${props => props.fill && css`fill: ${props.fill}`};
+  ${props => props.rotateCCW && css`
+    animation: ${rotateCounterClockwise} 12s linear infinite;  
+  `};
 `;
 
-const SvgIconSynapseCircle = () => {
+const SvgIconSynapseCircle = (props) => {
   return (
     <SvgWrapper
+      {...props}
       version="1.1"
       id="Layer_1"
       x="0px"

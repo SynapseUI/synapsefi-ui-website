@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
+import SvgIconSynapseCircle from './svgIcons/SvgIconSynapseCircle';
+
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
 // -----------------------------------------------------------------------------------------
@@ -52,7 +54,10 @@ const Sidebar = ({ siteTitle }) => {
   console.log('siteTitle: ', siteTitle);
   return (
     <Wrapper>
-      <HeaderTitle>{siteTitle}</HeaderTitle>
+      <HeaderTitle>
+        <SvgIconSynapseCircle size={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
+        {siteTitle}
+      </HeaderTitle>
       {itemsSidebar.map(({ text, linkName }) => {
         return (
           <Link to={linkName} key={text}>
