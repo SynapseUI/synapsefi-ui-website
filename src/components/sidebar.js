@@ -70,19 +70,22 @@ const SubSection = styled.div`
 const Test = styled.div`color: #fff;`;
 
 const Sidebar = ({ siteTitle }) => {
-  console.log('siteTitle: ', siteTitle);
   return (
     <Wrapper>
-      <HeaderTitle>
-        <SvgIconSynapseCircle size={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
-        {siteTitle}
-      </HeaderTitle>
+      <Link to={'/'}>
+        <HeaderTitle>
+          <SvgIconSynapseCircle size={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
+          {siteTitle}
+        </HeaderTitle>
+      </Link>
+
       {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionName) => {
         return (
           <div key={sectionName}>
             <Section>{sectionText}</Section>
             <SubSectionWrapper>
               {_.map(subSections, ({ subSectionText, linkName }) => {
+                console.log('linkName: ', linkName);
                 return (
                   <Link to={linkName} key={subSectionText}>
                     <SubSection className="mgl-m">{subSectionText}</SubSection>

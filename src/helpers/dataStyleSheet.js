@@ -1,8 +1,6 @@
 import * as prismStyle from 'react-syntax-highlighter/styles/prism';
 import * as hljsStyle from 'react-syntax-highlighter/styles/hljs';
 
-
-
 export const hljsStyles = [
   { text: 'agate', style: hljsStyle.agate },
   { text: 'androidstudio', style: hljsStyle.androidstudio },
@@ -85,7 +83,6 @@ export const hljsStyles = [
   { text: 'zenburn', style: hljsStyle.zenburn },
 ];
 
-console.log('prismStyle.coy: ', prismStyle.coy);
 export const prismStyles = [
   { text: 'coy', style: prismStyle.coy },
   { text: 'dark', style: prismStyle.dark },
@@ -111,5 +108,3 @@ export const prismStyles = [
   { text: 'vs', style: prismStyle.vs },
   { text: 'xonokai', style: prismStyle.xonokai },
 ];
-
-

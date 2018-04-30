@@ -7,7 +7,6 @@ const Header = styled.div`
 `;
 
 const PageHeader = props => {
-  console.log('title: ', props.title);
   return (
     <div>
       <Header>{props.title}</Header>
