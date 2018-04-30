@@ -85,7 +85,6 @@ const Sidebar = ({ siteTitle }) => {
             <Section>{sectionText}</Section>
             <SubSectionWrapper>
               {_.map(subSections, ({ subSectionText, linkName }) => {
-                console.log('linkName: ', linkName);
                 return (
                   <Link to={linkName} key={subSectionText}>
                     <SubSection className="mgl-m">{subSectionText}</SubSection>
@@ -96,13 +95,6 @@ const Sidebar = ({ siteTitle }) => {
           </div>
         );
       })}
-      {/* {itemsForSidebar.map(({ text, linkName }) => {
-        return (
-          <Link to={linkName} key={text}>
-            <Section>{text}</Section>
-          </Link>
-        );
-      })} */}
     </Wrapper>
   );
 };
