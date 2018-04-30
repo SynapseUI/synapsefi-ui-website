@@ -33,35 +33,47 @@ const SectionWrapper = styled.div`
   }
 `;
 
-const ItemsWrapper = styled.div`
+const SubSectionWrapper = styled.div`
   display: grid;
   justify-items: start;
 `;
+
+const renderSubSections = subSection => {
+  return (
+    <SubSectionWrapper>
+      {_.map(subSection, ({ subSectionText, linkName }) => {
+        console.log('linkName: ', linkName);
+        return (
+          <Link to={linkName} key={linkName}>
+            <H4>{subSectionText}</H4>
+          </Link>
+        );
+      })}
+    </SubSectionWrapper>
+  );
+};
+
+const renderSections = () => {
+  return (
+    <SectionWrapper>
+      {_.map(itemsForSidebar, ({ sectionText, subSection }, sectionLinkName) => {
+        return (
+          <div key={sectionText} className="mgb-l">
+            <H2 className="mgb-m">{sectionText}</H2>
+            {renderSubSections(subSection)}
+          </div>
+        );
+      })}
+    </SectionWrapper>
+  );
+};
 
 const index = () => {
   return (
     <div>
       <H1 className="mgb-m">Documentation</H1>
       <P className="mgb-l">{faker.lorem.sentence(40)}</P>
-      <SectionWrapper>
-        {_.map(itemsForSidebar, ({ sectionText, children }, sectionLinkName) => {
-          return (
-            <div key={sectionText} className="mgb-l">
-              <H2 className="mgb-m">{sectionText}</H2>
-              <ItemsWrapper>
-                {_.map(children, ({ text, linkName }) => {
-                  console.log('linkName: ', linkName);
-                  return (
-                    <Link to={linkName} key={linkName}>
-                      <H4>{text}</H4>
-                    </Link>
-                  );
-                })}
-              </ItemsWrapper>
-            </div>
-          );
-        })}
-      </SectionWrapper>
+      {renderSections()}
     </div>
   );
 };
