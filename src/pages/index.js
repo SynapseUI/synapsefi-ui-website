@@ -38,10 +38,10 @@ const SubSectionWrapper = styled.div`
   justify-items: start;
 `;
 
-const renderSubSections = subSection => {
+const renderSubSections = subSections => {
   return (
     <SubSectionWrapper>
-      {_.map(subSection, ({ subSectionText, linkName }) => {
+      {_.map(subSections, ({ subSectionText, linkName }) => {
         console.log('linkName: ', linkName);
         return (
           <Link to={linkName} key={linkName}>
@@ -56,11 +56,11 @@ const renderSubSections = subSection => {
 const renderSections = () => {
   return (
     <SectionWrapper>
-      {_.map(itemsForSidebar, ({ sectionText, subSection }, sectionLinkName) => {
+      {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionLinkName) => {
         return (
           <div key={sectionText} className="mgb-l">
             <H2 className="mgb-m">{sectionText}</H2>
-            {renderSubSections(subSection)}
+            {renderSubSections(subSections)}
           </div>
         );
       })}

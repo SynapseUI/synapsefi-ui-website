@@ -8,7 +8,7 @@ export const STYLE_GUIDE_BUTTONS = 'buttons'
 export default {
   [STYLE_GUIDE]: {
     sectionText: 'Style Guide',
-    subSection: {
+    subSections: {
       [STYLE_GUIDE_ICONS]: { subSectionText: 'Svg Icons', linkName: `${STYLE_GUIDE}/${STYLE_GUIDE_ICONS}` },
       [STYLE_GUIDE_COLOR]: { subSectionText: 'Colors', linkName: `${STYLE_GUIDE}/${STYLE_GUIDE_COLOR}` },
       [STYLE_GUIDE_BUTTONS]: { subSectionText: 'Buttons', linkName: `${STYLE_GUIDE}/${STYLE_GUIDE_BUTTONS}` },
@@ -16,6 +16,6 @@ export default {
   },
   [COMPONENTS]: {
     sectionText: 'Components',
-    subSection: {},
+    subSections: {},
   },
 };

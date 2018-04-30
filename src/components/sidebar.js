@@ -40,15 +40,34 @@ const HeaderTitle = styled.div`
   padding-left: 1.6rem;
 `;
 
-const NavbarItem = styled.div`
-  cursor: pointer;
+const Section = styled.div`
+  font-size: 1.8rem;
+  /* cursor: pointer; */
   padding: var(--padding-sidebar-item);
 
-  &:hover {
+  /* &:hover {
     color: var(--color-default-font);
     background-color: var(--color-navbar-hover);
+  } */
+`;
+
+const SubSectionWrapper = styled.div`
+  display: grid;
+  /* justify-items: start; */
+`;
+
+const SubSection = styled.div`
+  font-size: 1.6rem;
+  padding: var(--padding-sidebar-subsection-item);
+
+  &:hover {
+    /* color: var(--color-default-font); */
+    color: var(--color-teal);
+    /* background-color: var(--color-navbar-hover); */
   }
 `;
+
+const Test = styled.div`color: #fff;`;
 
 const Sidebar = ({ siteTitle }) => {
   console.log('siteTitle: ', siteTitle);
@@ -58,10 +77,26 @@ const Sidebar = ({ siteTitle }) => {
         <SvgIconSynapseCircle size={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
         {siteTitle}
       </HeaderTitle>
+      {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionName) => {
+        return (
+          <div key={sectionName}>
+            <Section>{sectionText}</Section>
+            <SubSectionWrapper>
+              {_.map(subSections, ({ subSectionText, linkName }) => {
+                return (
+                  <Link to={linkName} key={subSectionText}>
+                    <SubSection className="mgl-m">{subSectionText}</SubSection>
+                  </Link>
+                );
+              })}
+            </SubSectionWrapper>
+          </div>
+        );
+      })}
       {/* {itemsForSidebar.map(({ text, linkName }) => {
         return (
           <Link to={linkName} key={text}>
-            <NavbarItem>{text}</NavbarItem>
+            <Section>{text}</Section>
           </Link>
         );
       })} */}

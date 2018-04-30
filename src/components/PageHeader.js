@@ -10,7 +10,7 @@ const PageHeader = props => {
   console.log('title: ', props.title);
   return (
     <div>
-      <Header>{props.title}</Header>;
+      <Header>{props.title}</Header>
     </div>
   );
 };
