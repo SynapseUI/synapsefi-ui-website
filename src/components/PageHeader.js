@@ -6,9 +6,13 @@ const Header = styled.div`
   margin-bottom: 4rem;
 `;
 
-const PageHeader = ({ title }) => {
-  console.log('title: ', title);
-  return <Header>{title}</Header>;
+const PageHeader = props => {
+  console.log('title: ', props.title);
+  return (
+    <div>
+      <Header>{props.title}</Header>;
+    </div>
+  );
 };
 
 export default PageHeader;

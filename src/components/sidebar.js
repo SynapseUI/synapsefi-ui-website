@@ -7,7 +7,7 @@ import SvgIconSynapseCircle from './svgIcons/SvgIconSynapseCircle';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
 // -----------------------------------------------------------------------------------------
-import itemsSidebar from '../helpers/itemsSidebar';
+import itemsForSidebar from '../helpers/itemsForSidebar';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -58,13 +58,13 @@ const Sidebar = ({ siteTitle }) => {
         <SvgIconSynapseCircle size={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
         {siteTitle}
       </HeaderTitle>
-      {itemsSidebar.map(({ text, linkName }) => {
+      {/* {itemsForSidebar.map(({ text, linkName }) => {
         return (
           <Link to={linkName} key={text}>
             <NavbarItem>{text}</NavbarItem>
           </Link>
         );
-      })}
+      })} */}
     </Wrapper>
   );
 };

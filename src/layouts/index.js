@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { injectGlobal, css } from 'styled-components';
 
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Component Import ------------------------------------
@@ -34,7 +34,9 @@ const StylePage = styled.div`
   margin: 48px 72px;
 `;
 
-const Layout = ({ children, data, location}) => (
+const PageHeaderWrapper = styled.div`${props => props['isHome'] && css`display: none;`};`;
+
+const Layout = ({ children, data, location }) => (
   <div style={{ position: 'relative' }}>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -42,11 +44,13 @@ const Layout = ({ children, data, location}) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-      />
+    />
     <Sidebar siteTitle={data.site.siteMetadata.title} />
     <Header siteTitle={data.site.siteMetadata.title} />
     <StylePage>
-      <PageHeader title={location.pathname}/>
+      <PageHeaderWrapper isHome={location.pathname === '/'}>
+        <PageHeader title={location.pathname} />
+      </PageHeaderWrapper>
       {children()}
     </StylePage>
   </div>

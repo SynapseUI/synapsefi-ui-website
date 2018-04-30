@@ -1,64 +1,69 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import _ from 'lodash';
 import styled from 'styled-components';
+import faker from 'faker';
+import Link from 'gatsby-link';
 
-// -----------------------------------------------------------------------------------------
-// ------------------------------------ Data -----------------------------------------------
-// -----------------------------------------------------------------------------------------
-import dataForSvgIconPage from '../helpers/dataForSvgIconPage';
+import namesForSidebar from '../helpers/constants/namesForSidebar';
+
+import itemsForSidebar from '../helpers/itemsForSidebar';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
 // -----------------------------------------------------------------------------------------
-const SectionTitle = styled.h3`
+const H1 = styled.h1`font-size: 4.2rem;`;
+const H2 = styled.h2`font-size: 3.2rem;`;
+const H4 = styled.h4`
+  cursor: pointer;
   font-size: 1.8rem;
-  font-weight: normal;
-  color: var(--font-color-section-title);
+  padding: .5rem 0;
+  padding-right: 1rem;
+  &:hover {
+    color: var(--color-teal);
+  }
+`;
+const P = styled.p`font-size: 1.8rem;`;
+
+const SectionWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    width: 35rem;
+  }
 `;
 
-const IconListWrapper = styled.div`
+const ItemsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 100px);
-  /* grid-template-rows: repeat(auto-fit, 100px); */
-  grid-auto-rows: 100px;
-  grid-gap: 1.2rem;
+  justify-items: start;
 `;
 
-const IconGroupWrapper = styled.div`
-  font-size: 1.2rem;
+const index = () => {
+  return (
+    <div>
+      <H1 className="mgb-m">Documentation</H1>
+      <P className="mgb-l">{faker.lorem.sentence(40)}</P>
+      <SectionWrapper>
+        {_.map(itemsForSidebar, ({ sectionText, children }, sectionLinkName) => {
+          return (
+            <div key={sectionText} className="mgb-l">
+              <H2 className="mgb-m">{sectionText}</H2>
+              <ItemsWrapper>
+                {_.map(children, ({ text, linkName }) => {
+                  console.log('linkName: ', linkName);
+                  return (
+                    <Link to={linkName} key={linkName}>
+                      <H4>{text}</H4>
+                    </Link>
+                  );
+                })}
+              </ItemsWrapper>
+            </div>
+          );
+        })}
+      </SectionWrapper>
+    </div>
+  );
+};
 
-  display: grid;
-  grid-auto-rows: 1fr;
-  justify-items: center;
-  grid-gap: .8rem;
-`;
-
-const Icon = styled.div`align-self: end;`;
-
-
-const SvgIcons = () => (
-  <div>
-    {dataForSvgIconPage.map(section => {
-      return _.map(section, (sectionItems, sectionTitle) => {
-        return (
-          <div>
-            <SectionTitle className="mgb-m">{sectionTitle}</SectionTitle>
-            <IconListWrapper className="mgl-l">
-              {sectionItems.map(({ text, component }) => {
-                return (
-                  <IconGroupWrapper key={text}>
-                    <Icon>{component}</Icon>
-                    <div style={{ textAlign: 'center' }}>{text}</div>
-                  </IconGroupWrapper>
-                );
-              })}
-            </IconListWrapper>
-          </div>
-        );
-      });
-    })}
-  </div>
-);
-
-export default SvgIcons;
+export default index;
