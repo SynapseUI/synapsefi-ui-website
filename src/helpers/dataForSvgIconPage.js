@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as svgIcons from '../components/svgIcons';
+import * as SvgIcons from '../components/SvgIcons';
 
 // --------------------------------------------------------------------------------------
 const DASHBOARD = 'Dashboard';
@@ -17,13 +17,13 @@ const USER_INFORMATION = 'User Information';
 export default [
   {
     [DASHBOARD]: [
-      { text: BUSINESS_INFO, component: <svgIcons.navBusiness /> },
-      { text: CIP_DOCUMENTS_AND_LIMITS, component: <svgIcons.navBusiness /> },
-      { text: FINAL_PREVIEW, component: <svgIcons.navBusiness /> },
-      { text: FLOW_OF_FUNDS, component: <svgIcons.navBusiness /> },
-      { text: INTEGRATION_NOTES, component: <svgIcons.navBusiness /> },
-      { text: RISK_ASSESSMENT, component: <svgIcons.navBusiness /> },
-      { text: USER_INFORMATION, component: <svgIcons.navBusiness /> },
+      { text: BUSINESS_INFO, component: <SvgIcons.navBusiness /> },
+      { text: CIP_DOCUMENTS_AND_LIMITS, component: <SvgIcons.navBusiness /> },
+      { text: FINAL_PREVIEW, component: <SvgIcons.navBusiness /> },
+      { text: FLOW_OF_FUNDS, component: <SvgIcons.navBusiness /> },
+      { text: INTEGRATION_NOTES, component: <SvgIcons.navBusiness /> },
+      { text: RISK_ASSESSMENT, component: <SvgIcons.navBusiness /> },
+      { text: USER_INFORMATION, component: <SvgIcons.navBusiness /> },
     ],
   },
 ];
