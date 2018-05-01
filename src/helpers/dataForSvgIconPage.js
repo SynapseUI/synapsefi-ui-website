@@ -1,12 +1,6 @@
 import React from 'react';
 
-import SvgIconBusinessInfo from '../components/svgIcons/Dashboard/SvgIconBusinessInfo';
-import SvgIconCipDocumentsAndLimits from '../components/svgIcons/Dashboard/SvgIconCipDocumentsAndLimits';
-import SvgIconFinalPreview from '../components/svgIcons/Dashboard/SvgIconFinalPreview';
-import SvgIconFlowOfFunds from '../components/svgIcons/Dashboard/SvgIconFlowOfFunds';
-import SvgIconIntegrationNotes from '../components/svgIcons/Dashboard/SvgIconIntegrationNotes';
-import SvgIconRiskAssessment from '../components/svgIcons/Dashboard/SvgIconRiskAssessment';
-import SvgIconUserInformation from '../components/svgIcons/Dashboard/SvgIconUserInformation';
+import * as svgIcons from '../components/svgIcons';
 
 // --------------------------------------------------------------------------------------
 const DASHBOARD = 'Dashboard';
@@ -23,13 +17,13 @@ const USER_INFORMATION = 'User Information';
 export default [
   {
     [DASHBOARD]: [
-      { text: BUSINESS_INFO, component: <SvgIconBusinessInfo /> },
-      { text: CIP_DOCUMENTS_AND_LIMITS, component: <SvgIconCipDocumentsAndLimits /> },
-      { text: FINAL_PREVIEW, component: <SvgIconFinalPreview /> },
-      { text: FLOW_OF_FUNDS, component: <SvgIconFlowOfFunds /> },
-      { text: INTEGRATION_NOTES, component: <SvgIconIntegrationNotes /> },
-      { text: RISK_ASSESSMENT, component: <SvgIconRiskAssessment /> },
-      { text: USER_INFORMATION, component: <SvgIconUserInformation /> },
+      { text: BUSINESS_INFO, component: <svgIcons.navBusiness /> },
+      { text: CIP_DOCUMENTS_AND_LIMITS, component: <svgIcons.navBusiness /> },
+      { text: FINAL_PREVIEW, component: <svgIcons.navBusiness /> },
+      { text: FLOW_OF_FUNDS, component: <svgIcons.navBusiness /> },
+      { text: INTEGRATION_NOTES, component: <svgIcons.navBusiness /> },
+      { text: RISK_ASSESSMENT, component: <svgIcons.navBusiness /> },
+      { text: USER_INFORMATION, component: <svgIcons.navBusiness /> },
     ],
   },
 ];
