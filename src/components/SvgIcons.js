@@ -1,11 +1,30 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+const changeColor = color => {
+  return `
+    *,
+    g,
+    path {
+      fill: ${color};
+    }
+  `;
+};
+
+const changeColorWhenHover = hoverColor => {
+  return `
+    &:hover {
+      ${changeColor(hoverColor)};
+    }
+  `;
+};
+
 const StyledSvg = styled.svg`
   ${props => props.width && css`width: props.width;`};
   ${props => props.height && css`width: props.height;`};
-  ${props => props.fill && css`fill: props.fill;`};
-  ${props => props.hoverFill && css`width: props.hoverFill;`};
+  ${props => props.color && css`${changeColor(props.color)};`};
+  ${props => props.hoverColor && css`${changeColorWhenHover(props.hoverColor)};`};
+  ${props => props.hasCursor && css`cursor: pointer;`};
 `;
 
 /*
@@ -39,6 +58,7 @@ const StyledSvg = styled.svg`
 
   - plus
   - print
+  - profile
   - search
   - shape
   - synapseCircleLogo
@@ -47,7 +67,7 @@ const StyledSvg = styled.svg`
 
 */
 
-export const arrow = (props) => (
+export const arrow = props => (
   <StyledSvg {...props} xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13">
     <path
       fill="#049CB0"
@@ -76,7 +96,7 @@ export const banner = props => (
   </StyledSvg>
 );
 
-export const checkmark = (props) => (
+export const checkmark = props => (
   <StyledSvg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -200,41 +220,24 @@ export const error = props => (
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ navbar svg icons -----------------------------------
 // -----------------------------------------------------------------------------------------
-export const navBusiness = (props) => (
-  <StyledSvg
-    {...props}
-    width="22px"
-    height="19px"
-    viewBox="0 0 22 19"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g
-        id="0317_modals_Doc"
-        transform="translate(-1396.000000, -1728.000000)"
-        fill="#000000"
-        fillRule="nonzero"
-      >
-        <g id="Group-6" transform="translate(1396.000000, 1728.000000)">
-          <g id="briefcase">
-            <path
-              d="M13.7401172,12.9627695 C13.7401172,13.1754219 13.6623008,13.3596289 13.5070547,13.5147891 C13.3516367,13.6703789 13.1675156,13.7480234 12.9548633,13.7480234 L9.02919531,13.7480234 C8.81641406,13.7480234 8.63246484,13.6703789 8.47704688,13.5147891 C8.32167188,13.3596719 8.24398438,13.1754648 8.24398438,12.9627695 L8.24398438,11 L0,11 L0,16.8886094 C0,17.4282969 0.192113281,17.8902969 0.576554688,18.2746523 C0.960910156,18.6590508 1.42308203,18.85125 1.96289844,18.85125 L20.0212031,18.85125 C20.5608906,18.85125 21.0230195,18.6590508 21.407418,18.2746523 C21.7919453,17.8902969 21.9839727,17.4282969 21.9839727,16.8886094 L21.9839727,11 L13.7401172,11 L13.7401172,12.9627695 Z"
-              id="Shape"
-            />
-            <rect id="Rectangle-path" x="9" y="11" width="3.14084375" height="1.57029297" />
-            <path
-              d="M21.407375,3.71714063 C21.0230195,3.33269922 20.5608477,3.14058594 20.0211602,3.14058594 L15.7027578,3.14058594 L15.7027578,1.17764453 C15.7027578,0.850480469 15.588332,0.572472656 15.3592656,0.343449219 C15.130457,0.114554688 14.8522344,0 14.5251992,0 L7.45890234,0 C7.13182422,0 6.85377344,0.114554687 6.62470703,0.343449219 C6.39564063,0.57234375 6.28121484,0.8504375 6.28121484,1.17764453 L6.28121484,3.14058594 L1.96289844,3.14058594 C1.423125,3.14058594 0.960953125,3.33269922 0.576554688,3.71714063 C0.192113281,4.10153906 0,4.56345313 0,5.10326953 L0,9.81419141 L21.9839297,9.81419141 L21.9839297,5.10326953 C21.9839297,4.56345313 21.7919453,4.10153906 21.407375,3.71714063 Z M14.1325938,3.14058594 L7.85146484,3.14058594 L7.85146484,1.57020703 L14.1325938,1.57020703 L14.1325938,3.14058594 Z"
-              id="Shape"
-            />
-          </g>
-        </g>
+export const navBusiness = props => {
+  return (
+    <StyledSvg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="28"
+      viewBox="0 0 32 28"
+    >
+      <g fill="#000" fillRule="nonzero">
+        <path d="M19.986 19.103c0 .313-.114.585-.34.814a1.09 1.09 0 0 1-.803.343h-5.71a1.09 1.09 0 0 1-.803-.343 1.118 1.118 0 0 1-.339-.814v-2.892H0v8.677c0 .796.28 1.477.839 2.043.559.567 1.23.85 2.016.85h26.267c.785 0 1.457-.283 2.016-.85.56-.566.839-1.247.839-2.043v-8.677H19.986v2.892z" />
+        <path d="M13.091 16.211H19v2.314h-5.909zM31.138 5.478a2.731 2.731 0 0 0-2.016-.85H22.84V1.735c0-.482-.166-.891-.5-1.229A1.641 1.641 0 0 0 21.129 0H10.849c-.475 0-.88.169-1.213.506-.333.337-.5.747-.5 1.23v2.892h-6.28c-.786 0-1.458.283-2.017.85A2.803 2.803 0 0 0 0 7.52v6.942h31.977V7.521c0-.796-.28-1.477-.839-2.043zm-10.582-.85H11.42V2.314h9.136v2.314z" />
       </g>
-    </g>
-  </StyledSvg>
-);
+    </StyledSvg>
+  );
+};
 
-export const navIntegration = (props) => (
+export const navIntegration = props => (
   <StyledSvg
     {...props}
     width="21px"
@@ -265,7 +268,7 @@ export const navIntegration = (props) => (
   </StyledSvg>
 );
 
-export const navUser = (props) => (
+export const navUser = props => (
   <StyledSvg
     {...props}
     width="33px"
@@ -306,7 +309,7 @@ export const navUser = (props) => (
   </StyledSvg>
 );
 
-export const navFlow = (props) => (
+export const navFlow = props => (
   <StyledSvg
     {...props}
     width="42px"
@@ -342,56 +345,32 @@ export const navFlow = (props) => (
   </StyledSvg>
 );
 
-export const navDoc = (props) => (
+export const navDoc = props => (
   <StyledSvg
     {...props}
-    width="21px"
-    height="24px"
-    viewBox="0 0 21 24"
-    version="1.1"
     xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="31"
+    viewBox="0 0 28 31"
   >
-    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g id="0317_modals_Doc" transform="translate(-1723.000000, -1726.000000)">
-        <g id="Group-7" transform="translate(1723.000000, 1726.000000)" fillRule="nonzero">
-          <g id="Group">
-            <g id="file">
-              <path
-                d="M14.4920219,0.642063983 L19.3226959,4.72875129 L20.173968,5.44891641 L14.4920219,5.44891641 L14.4920219,0.642063983 Z M0,23.1578947 L0,21.7956656 L0,0 L13.4185388,0 L13.4185388,6.35706914 L20.9329205,6.35706914 L20.9329205,23.1578947 L0,23.1578947 Z"
-                id="Shape"
-                fill="#000000"
-              />
-              <path
-                d="M17.6404078,7.26522188 L3.43904545,7.26522188 C3.12547937,7.26522188 2.87099095,7.46819401 2.87099095,7.71929825 C2.87099095,7.97040248 3.12547937,8.17337461 3.43904545,8.17337461 L17.6404078,8.17337461 C17.9539739,8.17337461 18.2084623,7.97040248 18.2084623,7.71929825 C18.2084623,7.46819401 17.9539739,7.26522188 17.6404078,7.26522188 Z"
-                id="Shape"
-                fill="#FFFFFF"
-              />
-              <path
-                d="M3.43904545,5.44891641 L9.1195904,5.44891641 C9.43315649,5.44891641 9.6876449,5.24594427 9.6876449,4.99484004 C9.6876449,4.74373581 9.43315649,4.54076367 9.1195904,4.54076367 L3.43904545,4.54076367 C3.12547937,4.54076367 2.87099095,4.74373581 2.87099095,4.99484004 C2.87099095,5.24594427 3.12547937,5.44891641 3.43904545,5.44891641 Z"
-                id="Shape"
-                fill="#FFFFFF"
-              />
-              <path
-                d="M17.6404078,9.98968008 L3.43904545,9.98968008 C3.12547937,9.98968008 2.87099095,10.1926522 2.87099095,10.4437564 C2.87099095,10.6948607 3.12547937,10.8978328 3.43904545,10.8978328 L17.6404078,10.8978328 C17.9539739,10.8978328 18.2084623,10.6948607 18.2084623,10.4437564 C18.2084623,10.1926522 17.9539739,9.98968008 17.6404078,9.98968008 Z"
-                id="Shape"
-                fill="#FFFFFF"
-              />
-            </g>
-            <g id="user" transform="translate(9.263158, 12.736842)" fill="">
-              <ellipse id="Oval" cx="4.52260969" cy="2.17614636" rx="2.27039091" ry="2.17614636" />
-              <path
-                d="M4.54078181,4.79504644 C2.0329682,4.79504644 0,6.74362558 0,9.14730439 L9.08152735,9.14730439 C9.08152735,6.74362558 7.04855915,4.79504644 4.54078181,4.79504644 Z"
-                id="Shape"
-              />
-            </g>
-          </g>
-        </g>
+    <g fill="none" fillRule="nonzero">
+      <path
+        fill="#000"
+        d="M19.323.856l6.44 5.449 1.136.96h-7.576V.856zM0 30.877V0h17.891v8.476h10.02v22.401H0z"
+      />
+      <path
+        fill="#FFF"
+        d="M23.52 9.687H4.586c-.418 0-.757.27-.757.605 0 .335.34.606.757.606h18.936c.418 0 .757-.27.757-.606 0-.334-.34-.605-.757-.605zM4.585 7.265h7.574c.419 0 .758-.27.758-.605 0-.335-.34-.606-.758-.606H4.585c-.418 0-.757.271-.757.606 0 .335.34.605.757.605zM23.52 13.32H4.586c-.418 0-.757.27-.757.605 0 .335.34.605.757.605h18.936c.418 0 .757-.27.757-.605 0-.335-.34-.605-.757-.605z"
+      />
+      <g fill="#FFF" transform="translate(12.35 16.982)">
+        <ellipse cx="6.03" cy="2.902" rx="3.027" ry="2.902" />
+        <path d="M6.054 6.393C2.711 6.393 0 8.992 0 12.196h12.109c0-3.204-2.71-5.803-6.055-5.803z" />
       </g>
     </g>
   </StyledSvg>
 );
 
-export const navRiskAssessment = (props) => (
+export const navRiskAssessment = props => (
   <StyledSvg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -413,7 +392,7 @@ export const navRiskAssessment = (props) => (
   </StyledSvg>
 );
 
-export const navFinalPreview = (props) => (
+export const navFinalPreview = props => (
   <StyledSvg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -464,6 +443,20 @@ export const print = props => (
   </StyledSvg>
 );
 
+export const profile = props => (
+  <StyledSvg
+    {...props}
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+  >
+    <title>profile</title>
+    <path d="M27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2z" />
+  </StyledSvg>
+);
+
 export const search = props => (
   <StyledSvg
     {...props}
@@ -479,7 +472,7 @@ export const search = props => (
   </StyledSvg>
 );
 
-export const shape = (props) => (
+export const shape = props => (
   <StyledSvg
     {...props}
     xmlns="http://www.w3.org/2000/svg"

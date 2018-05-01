@@ -12,18 +12,20 @@ const FLOW_OF_FUNDS = 'Flow of Funds';
 const INTEGRATION_NOTES = 'Integration Notes';
 const RISK_ASSESSMENT = 'Risk Assessment';
 const USER_INFORMATION = 'User Information';
+const PROFILE = 'Profile';
 // --------------------------------------------------------------------------------------
 
 export default [
   {
     [DASHBOARD]: [
-      { text: BUSINESS_INFO, component: <SvgIcons.navBusiness /> },
-      { text: CIP_DOCUMENTS_AND_LIMITS, component: <SvgIcons.navBusiness /> },
-      { text: FINAL_PREVIEW, component: <SvgIcons.navBusiness /> },
-      { text: FLOW_OF_FUNDS, component: <SvgIcons.navBusiness /> },
-      { text: INTEGRATION_NOTES, component: <SvgIcons.navBusiness /> },
-      { text: RISK_ASSESSMENT, component: <SvgIcons.navBusiness /> },
-      { text: USER_INFORMATION, component: <SvgIcons.navBusiness /> },
+      { text: BUSINESS_INFO, component: <SvgIcons.navBusiness hasCursor hoverColor={'red'}/> },
+      { text: CIP_DOCUMENTS_AND_LIMITS, component: <SvgIcons.navDoc /> },
+      { text: FINAL_PREVIEW, component: <SvgIcons.navFinalPreview /> },
+      { text: FLOW_OF_FUNDS, component: <SvgIcons.navFlow /> },
+      { text: INTEGRATION_NOTES, component: <SvgIcons.navIntegration /> },
+      { text: RISK_ASSESSMENT, component: <SvgIcons.navRiskAssessment /> },
+      { text: USER_INFORMATION, component: <SvgIcons.navUser /> },
+      { text: PROFILE, component: <SvgIcons.profile hasCursor hoverColor={'red'} /> },
     ],
   },
 ];

@@ -49,7 +49,7 @@ const Layout = ({ children, data, location }) => (
     <Header siteTitle={data.site.siteMetadata.title} />
     <StylePage>
       <PageHeaderWrapper isHome={location.pathname === '/'}>
-        <PageHeader title={location.pathname} />
+        <PageHeader pathname={location.pathname} />
       </PageHeaderWrapper>
       {children()}
     </StylePage>
