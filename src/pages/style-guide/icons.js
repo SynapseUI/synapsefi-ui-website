@@ -20,7 +20,7 @@ const SectionTitle = styled.h3`
 const IconListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 100px);
-  /* grid-template-rows: repeat(auto-fit, 100px); */
+  justify-content: center;
   grid-auto-rows: 100px;
   grid-gap: 1.2rem;
 `;
@@ -28,8 +28,11 @@ const IconListWrapper = styled.div`
 const IconGroupWrapper = styled.div`
   font-size: 1.2rem;
 
+  margin: 0 auto;
+
   display: grid;
   grid-auto-rows: 1fr;
+  
   justify-items: center;
   grid-gap: .8rem;
 `;
@@ -38,26 +41,16 @@ const Icon = styled.div`align-self: end;`;
 
 const SvgIcons = () => (
   <div>
-    {/* <div>err</div> */}
-    {dataForSvgIconPage.map(section => {
-      return _.map(section, (sectionItems, sectionTitle) => {
+    <IconListWrapper>
+      {dataForSvgIconPage.map(({ text, component }) => {
         return (
-          <div>
-            <SectionTitle className="mgb-m">{sectionTitle}</SectionTitle>
-            <IconListWrapper className="mgl-l">
-              {sectionItems.map(({ text, component }) => {
-                return (
-                  <IconGroupWrapper key={text}>
-                    <Icon>{component}</Icon>
-                    <div style={{ textAlign: 'center' }}>{text}</div>
-                  </IconGroupWrapper>
-                );
-              })}
-            </IconListWrapper>
-          </div>
+          <IconGroupWrapper key={text}>
+            <Icon>{component}</Icon>
+            <div style={{ textAlign: 'center' }}>{text}</div>
+          </IconGroupWrapper>
         );
-      });
-    })}
+      })}
+    </IconListWrapper>
   </div>
 );
 

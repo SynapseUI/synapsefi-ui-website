@@ -26,7 +26,7 @@ const HeaderText = ({ siteTitle }) => {
   return (
     <Link to={'/'}>
       <HeaderTitle>
-        <SvgIcons.synapseCircleLogo width={'3.2rem'} fill={'#fff'} className="mgr-s" />
+        <SvgIcons.synapse_circle_logo color="#fff" size={32} rotate_ccw_slow className="mgr-s"/>
         {siteTitle}
       </HeaderTitle>
     </Link>
