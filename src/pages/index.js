@@ -11,17 +11,16 @@ import itemsForSidebar from '../helpers/itemsForSidebar';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
 // -----------------------------------------------------------------------------------------
-const H1 = styled.h1`font-size: 4.2rem;`;
-const H2 = styled.h2`font-size: 3.2rem;`;
+
 const H4 = styled.h4`
   cursor: pointer;
-  font-size: 1.8rem;
   padding: .5rem 0;
   padding-right: 1rem;
   &:hover {
     color: var(--color-teal);
   }
 `;
+
 const P = styled.p`font-size: 1.8rem;`;
 
 const SectionWrapper = styled.div`
@@ -45,7 +44,7 @@ const renderSubSections = subSections => {
         console.log('linkName: ', linkName);
         return (
           <Link to={linkName} key={linkName}>
-            <H4>{subSectionText}</H4>
+            <H4 className="h4">{subSectionText}</H4>
           </Link>
         );
       })}
@@ -59,7 +58,7 @@ const renderSections = () => {
       {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionLinkName) => {
         return (
           <div key={sectionText} className="mgb-l">
-            <H2 className="mgb-m">{sectionText}</H2>
+            <h2 className="h2 mgb-m">{sectionText}</h2>
             {renderSubSections(subSections)}
           </div>
         );
@@ -71,7 +70,7 @@ const renderSections = () => {
 const index = () => {
   return (
     <div>
-      <H1 className="mgb-m">Documentation</H1>
+      <h1 className="h1 mgb-m">Documentation</h1>
       <P className="mgb-l">{faker.lorem.sentence(40)}</P>
       {renderSections()}
     </div>

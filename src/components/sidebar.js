@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-import * as SvgIcons from './SvgIcons';
+// -----------------------------------------------------------------------------------------
+// ------------------------------------ Import Components ----------------------------------
+// -----------------------------------------------------------------------------------------
+import HeaderText from './HeaderText';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
@@ -17,9 +20,6 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
 
-  font-size: 1.6rem;
-  line-height: 1;
-
   width: var(--width-sidebar);
   min-height: 100vh;
 
@@ -28,42 +28,35 @@ const Wrapper = styled.div`
   z-index: 100;
 `;
 
-const HeaderTitle = styled.div`
-  height: var(--height-header);
-  background-color: var(--bg-color-header);
+const SectionWrapper = styled.div`
+  padding: 3rem 3rem;
 
-  display: flex;
-  align-items: center;
-
-  font-size: 2.4rem;
-  font-weight: 300;
-  padding-left: 1.6rem;
+  display: grid;
+  grid-gap: 2rem;
 `;
 
 const Section = styled.div`
-  font-size: 1.8rem;
-  /* cursor: pointer; */
-  padding: var(--padding-sidebar-item);
-
-  /* &:hover {
-    color: var(--color-default-font);
-    background-color: var(--color-navbar-hover);
-  } */
+  padding: var(--padding-sidebar-section);
+  /* margin: var(--padding-sidebar-section); */
 `;
 
 const SubSectionWrapper = styled.div`
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
   display: grid;
+  grid-gap: 1rem;
+
   /* justify-items: start; */
 `;
 
 const SubSection = styled.div`
-  font-size: 1.6rem;
-  padding: var(--padding-sidebar-subsection-item);
+  padding: var(--padding-sidebar-sub-section);
+  margin: var(--margin-sidebar-sub-section);
+
+  /* background-color: rgba(255,255,255,.1); */
 
   &:hover {
-    /* color: var(--color-default-font); */
     color: var(--color-teal);
-    /* background-color: var(--color-navbar-hover); */
   }
 `;
 
@@ -72,29 +65,28 @@ const Test = styled.div`color: #fff;`;
 const Sidebar = ({ siteTitle }) => {
   return (
     <Wrapper>
-      <Link to={'/'}>
-        <HeaderTitle>
-          <SvgIcons.synapseCircleLogo width={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
-          {siteTitle}
-        </HeaderTitle>
-      </Link>
+      <HeaderText siteTitle={siteTitle} />
 
-      {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionName) => {
-        return (
-          <div key={sectionName}>
-            <Section>{sectionText}</Section>
-            <SubSectionWrapper>
-              {_.map(subSections, ({ subSectionText, linkName }) => {
-                return (
-                  <Link to={linkName} key={subSectionText}>
-                    <SubSection className="mgl-m">{subSectionText}</SubSection>
-                  </Link>
-                );
-              })}
-            </SubSectionWrapper>
-          </div>
-        );
-      })}
+      <SectionWrapper>
+        {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionName) => {
+          return (
+            <div key={sectionName}>
+              <Section className="font-sidebar font-sidebar--section">{sectionText}</Section>
+              <SubSectionWrapper>
+                {_.map(subSections, ({ subSectionText, linkName }) => {
+                  return (
+                    <Link to={linkName} key={subSectionText}>
+                      <SubSection className="font-sidebar font-sidebar--sub-section">
+                        {subSectionText}
+                      </SubSection>
+                    </Link>
+                  );
+                })}
+              </SubSectionWrapper>
+            </div>
+          );
+        })}
+      </SectionWrapper>
     </Wrapper>
   );
 };
