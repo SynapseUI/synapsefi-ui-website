@@ -17,9 +17,11 @@ const H3 = styled.h3`
 
 const PageHeader = ({ pathname }) => {
   const filteredLinks = pathname.split('/').filter(str => str.length !== 0);
-  console.log('filteredLinks: ', filteredLinks);
   const sectionKey = filteredLinks[0];
   const subSectionKey = filteredLinks[1];
+
+  if (filteredLinks.length === 0) return null;
+  if (itemsForSidebar[sectionKey] === undefined) return null;
 
   return (
     <Wrapper>
