@@ -28,10 +28,15 @@ const PositionSidebar = styled.div`
   min-height: 100vh;
 `;
 
-const StylePage = styled.div`
-  padding: var(--height-header) 0 0 var(--width-sidebar);
-  /* background-color: red; */
-  margin: 48px 72px;
+const RemoveSidebarAndHeaderSpace = styled.div`
+  margin-left: var(--width-sidebar);
+  margin-top: var(--height-header);
+`;
+
+const Content = styled.div`
+  max-width: 1024px;
+  padding: 9rem 4rem;
+  margin: 0 auto;
 `;
 
 const Layout = ({ children, data, location }) => (
@@ -45,10 +50,12 @@ const Layout = ({ children, data, location }) => (
     />
     <Sidebar siteTitle={data.site.siteMetadata.title} />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <StylePage>
-      {location.pathname !== '/' && <PageHeader pathname={location.pathname} />}
-      {children()}
-    </StylePage>
+    <RemoveSidebarAndHeaderSpace>
+      <Content>
+        {location.pathname !== '/' && <PageHeader pathname={location.pathname} />}
+        {children()}
+      </Content>
+    </RemoveSidebarAndHeaderSpace>
   </div>
 );
 
