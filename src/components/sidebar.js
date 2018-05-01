@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-import SvgIconSynapseCircle from './svgIcons/SvgIconSynapseCircle';
+import * as SvgIcons from './SvgIcons';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
@@ -74,7 +74,7 @@ const Sidebar = ({ siteTitle }) => {
     <Wrapper>
       <Link to={'/'}>
         <HeaderTitle>
-          <SvgIconSynapseCircle size={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
+          <SvgIcons.synapseCircleLogo width={'3.2rem'} fill={'#fff'} rotateCCW className="mgr-s" />
           {siteTitle}
         </HeaderTitle>
       </Link>

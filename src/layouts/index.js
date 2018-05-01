@@ -34,8 +34,6 @@ const StylePage = styled.div`
   margin: 48px 72px;
 `;
 
-const PageHeaderWrapper = styled.div`${props => props['isHome'] && css`display: none;`};`;
-
 const Layout = ({ children, data, location }) => (
   <div style={{ position: 'relative' }}>
     <Helmet
@@ -48,9 +46,7 @@ const Layout = ({ children, data, location }) => (
     <Sidebar siteTitle={data.site.siteMetadata.title} />
     <Header siteTitle={data.site.siteMetadata.title} />
     <StylePage>
-      <PageHeaderWrapper isHome={location.pathname === '/'}>
-        <PageHeader pathname={location.pathname} />
-      </PageHeaderWrapper>
+      {location.pathname !== '/' && <PageHeader pathname={location.pathname} />}
       {children()}
     </StylePage>
   </div>
