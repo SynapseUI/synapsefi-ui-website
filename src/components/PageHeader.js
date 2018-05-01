@@ -16,13 +16,10 @@ const H3 = styled.h3`
 `;
 
 const PageHeader = ({ pathname }) => {
-  // console.log('pathname: ', pathname);
   const filteredLinks = pathname.split('/').filter(str => str.length !== 0);
-  // console.log('splittedPathName: ', filteredLinks);
   const sectionKey = filteredLinks[0];
   const subSectionKey = filteredLinks[1];
-  console.log('sectionKey: ', sectionKey);
-  console.log('subSectionKey: ', subSectionKey);
+
   return (
     <Wrapper>
       <H3>{itemsForSidebar[sectionKey]['subSections'][subSectionKey]['subSectionText']}</H3>
