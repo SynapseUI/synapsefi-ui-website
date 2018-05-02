@@ -31,12 +31,13 @@ const PositionSidebar = styled.div`
 const RemoveSidebarAndHeaderSpace = styled.div`
   margin-left: var(--width-sidebar);
   margin-top: var(--height-header);
+  /* display: grid; */
+  /* justify-content: center; */
 `;
 
 const Content = styled.div`
   max-width: 1024px;
-  padding: 9rem 4rem;
-  margin: 0 auto;
+  margin: 12.5rem auto;
 `;
 
 const Layout = ({ children, data, location }) => (

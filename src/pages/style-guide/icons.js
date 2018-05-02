@@ -6,7 +6,7 @@ import styled from 'styled-components';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data -----------------------------------------------
 // -----------------------------------------------------------------------------------------
-import dataForSvgIconPage from '../../helpers/dataForSvgIconPage';
+import * as SvgIcons from '../../npm-components/SvgIcons';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -32,21 +32,29 @@ const IconGroupWrapper = styled.div`
 
   display: grid;
   grid-auto-rows: 1fr;
-  
+
   justify-items: center;
-  grid-gap: .8rem;
+  grid-gap: 1.2rem;
 `;
 
 const Icon = styled.div`align-self: end;`;
 
-const SvgIcons = () => (
+const renderSvgComponent = (SvgComponent, key) => {
+  if (key === 'synapse_circle_logo') {
+    return <SvgComponent color="var(--color-teal)" rotate_ccw_normal />;
+  }
+  return <SvgComponent />;
+};
+
+const Icons = () => (
   <div>
     <IconListWrapper>
-      {dataForSvgIconPage.map(({ text, component }) => {
+      {_.map(SvgIcons, (SvgComponent, key) => {
+        if (key === '__esModule') return null;
         return (
-          <IconGroupWrapper key={text}>
-            <Icon>{component}</Icon>
-            <div style={{ textAlign: 'center' }}>{text}</div>
+          <IconGroupWrapper key={key}>
+            <Icon>{renderSvgComponent(SvgComponent, key)}</Icon>
+            <div style={{ textAlign: 'center' }}>{key}</div>
           </IconGroupWrapper>
         );
       })}
@@ -54,4 +62,4 @@ const SvgIcons = () => (
   </div>
 );
 
-export default SvgIcons;
+export default Icons;

@@ -1,8 +1,10 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "synapsefi-ui-test",
   "description": "Gatsby default starter",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Sean Hong <sean@synapsefi.com>",
+  "files": ["npm-dist"],
+  "main": "index.js",
   "dependencies": {
     "faker": "^4.1.0",
     "gatsby": "^1.9.247",
@@ -14,18 +16,24 @@
     "react-helmet": "^5.2.0",
     "styled-components": "^3.2.6"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "babel": "babel src/components -d dist",
+    "dist": "npm run clean && npm run babel"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "prettier": "^1.12.0"
   }
 }
