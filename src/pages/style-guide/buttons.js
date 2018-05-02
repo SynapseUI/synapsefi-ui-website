@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../../npm-components/Button';
+import { Button } from '../../npm-components/export';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
 // -----------------------------------------------------------------------------------------
