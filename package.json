@@ -3,7 +3,9 @@
   "description": "Gatsby default starter",
   "version": "1.0.0",
   "author": "Sean Hong <sean@synapsefi.com>",
-  "files": ["npm-dist"],
+  "files": [
+    "npm-dist"
+  ],
   "main": "index.js",
   "dependencies": {
     "faker": "^4.1.0",
@@ -14,9 +16,12 @@
     "gatsby-plugin-styled-components": "^2.0.11",
     "lodash": "^4.17.10",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "synapse-ui-testing": "^1.0.6"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

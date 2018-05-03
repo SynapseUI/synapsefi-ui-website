@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import { SvgIcons } from 'synapse-ui-testing';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Import Components ----------------------------------
 // -----------------------------------------------------------------------------------------
-import * as SvgIcons from '../../npm-package/SvgIcons';
+// import * as SvgIcons from '../npm-components/components/SvgIcons';
+
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
