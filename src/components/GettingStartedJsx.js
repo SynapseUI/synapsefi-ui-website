@@ -27,7 +27,7 @@ export default ExampleSimpleBtn;
 
 const GettingStartedJsx = () => {
   return (
-    <div className="prism-dark-jsx-wrapper">
+    <div className="prism-dark">
       <SyntaxHighlighter language="jsx" style={dark}>
         {jsxSnippet}
       </SyntaxHighlighter>

@@ -1,14 +1,27 @@
 .prism-dark {
-  display: flex !important;
-  justify-content: start !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  grid-gap: 3.5rem;
+  margin: 3.5rem 0;
+  &>div:last-child {
+    position: relative; // box-shadow: 0 0 1px var(--bg-color-sidebar);
+    border: 1px solid var(--bg-color-sidebar-opaque);
+    border-radius: 4px;
+    &>* {
+      // ------------------------
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); // ------------------------
+    }
+  }
   &>pre {
     border: none !important;
     text-shadow: none !important;
     border-radius: 4px !important;
     background-color: var(--bg-color-sidebar) !important;
+    box-shadow: 0 0 1px var(--bg-color-sidebar);
     font-size: 1.4rem !important;
-  }
-  &--power-shell {
-    
+    margin: 0 !important;
   }
 }

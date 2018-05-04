@@ -31,8 +31,6 @@ const PositionSidebar = styled.div`
 const RemoveSidebarAndHeaderSpace = styled.div`
   margin-left: var(--width-sidebar);
   margin-top: var(--height-header);
-  /* display: grid; */
-  /* justify-content: center; */
 `;
 
 const Content = styled.div`

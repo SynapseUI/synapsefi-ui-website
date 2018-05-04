@@ -43,7 +43,6 @@ const renderSubSections = subSections => {
   return (
     <SubSectionWrapper>
       {_.map(subSections, ({ subSectionText, linkName }) => {
-        console.log('linkName: ', linkName);
         return (
           <Link to={linkName} key={linkName}>
             <H4 className="h4">{subSectionText}</H4>
