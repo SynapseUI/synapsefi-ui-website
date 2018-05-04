@@ -1,25 +1,31 @@
-export const STYLE_GUIDE = 'style-guide';
+export const BASICS = 'basics';
 export const COMPONENTS = 'components';
 
-export const STYLE_GUIDE_ICONS = 'icons';
-export const STYLE_GUIDE_COLOR = 'colors';
-export const STYLE_GUIDE_BUTTONS = 'buttons';
+export const BASICS_GETTING_STARTED = 'getting-started';
+export const BASICS_ICONS = 'icons';
+export const BASICS_COLOR = 'colors';
+export const BASICS_BUTTONS = 'buttons';
+
 
 export default {
-  [STYLE_GUIDE]: {
-    sectionText: 'Style Guide',
+  [BASICS]: {
+    sectionText: 'Basics',
     subSections: {
-      [STYLE_GUIDE_ICONS]: {
+      [BASICS_GETTING_STARTED]: {
+        subSectionText: 'Getting Started',
+        linkName: `/${BASICS}/${BASICS_GETTING_STARTED}/`,
+      },
+      [BASICS_ICONS]: {
         subSectionText: 'Svg Icons',
-        linkName: `/${STYLE_GUIDE}/${STYLE_GUIDE_ICONS}/`,
+        linkName: `/${BASICS}/${BASICS_ICONS}/`,
       },
-      [STYLE_GUIDE_COLOR]: {
+      [BASICS_COLOR]: {
         subSectionText: 'Colors',
-        linkName: `/${STYLE_GUIDE}/${STYLE_GUIDE_COLOR}/`,
+        linkName: `/${BASICS}/${BASICS_COLOR}/`,
       },
-      [STYLE_GUIDE_BUTTONS]: {
+      [BASICS_BUTTONS]: {
         subSectionText: 'Buttons',
-        linkName: `/${STYLE_GUIDE}/${STYLE_GUIDE_BUTTONS}/`,
+        linkName: `/${BASICS}/${BASICS_BUTTONS}/`,
       },
     },
   },

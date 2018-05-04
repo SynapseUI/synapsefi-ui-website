@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import faker from 'faker';
 import Link from 'gatsby-link';
 
+// -----------------------------------------------------------------------------------------
+// ----------------------------------- Component Import ------------------------------------
+// -----------------------------------------------------------------------------------------
 import namesForSidebar from '../helpers/constants/namesForSidebar';
-
 import itemsForSidebar from '../helpers/itemsForSidebar';
 
 // -----------------------------------------------------------------------------------------
@@ -70,7 +72,8 @@ const renderSections = () => {
 const index = () => {
   return (
     <div>
-      <h1 className="h1 mgb-m">Documentation</h1>
+
+      <h1 className="h1 mgb-s">Documentation</h1>
       <P className="mgb-l">{faker.lorem.sentence(40)}</P>
       {renderSections()}
     </div>

@@ -1,0 +1,14 @@
+.prism-dark {
+  display: flex !important;
+  justify-content: start !important;
+  &>pre {
+    border: none !important;
+    text-shadow: none !important;
+    border-radius: 4px !important;
+    background-color: var(--bg-color-sidebar) !important;
+    font-size: 1.4rem !important;
+  }
+  &--power-shell {
+    
+  }
+}
