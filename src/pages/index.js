@@ -7,8 +7,12 @@ import Link from 'gatsby-link';
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Component Import ------------------------------------
 // -----------------------------------------------------------------------------------------
-import namesForSidebar from '../helpers/constants/namesForSidebar';
-import itemsForSidebar from '../helpers/itemsForSidebar';
+import dataForSidebar, {
+  SECTION_TEXT,
+  SUB_SECTIONS,
+  SUB_SECTION_LINK,
+  SUB_SECTION_TEXT,
+} from '../helpers/dataForSidebar';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -42,10 +46,10 @@ const SubSectionWrapper = styled.div`
 const renderSubSections = subSections => {
   return (
     <SubSectionWrapper>
-      {_.map(subSections, ({ subSectionText, linkName }) => {
+      {_.map(subSections, (subSectionVal, subSectionKey) => {
         return (
-          <Link to={linkName} key={linkName}>
-            <H4 className="h4">{subSectionText}</H4>
+          <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
+            <H4 className="h4">{subSectionVal[SUB_SECTION_TEXT]}</H4>
           </Link>
         );
       })}
@@ -56,11 +60,11 @@ const renderSubSections = subSections => {
 const renderSections = () => {
   return (
     <SectionWrapper>
-      {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionLinkName) => {
+      {_.map(dataForSidebar, (sectionVal, sectionKey) => {
         return (
-          <div key={sectionText} className="mgb-l">
-            <h2 className="h2 mgb-m">{sectionText}</h2>
-            {renderSubSections(subSections)}
+          <div key={sectionKey} className="mgb-l">
+            <h2 className="h2 mgb-m">{sectionVal[SECTION_TEXT]}</h2>
+            {renderSubSections(sectionVal[SUB_SECTIONS])}
           </div>
         );
       })}
@@ -71,7 +75,6 @@ const renderSections = () => {
 const index = () => {
   return (
     <div>
-
       <h1 className="h1 mgb-s">Documentation</h1>
       <P className="mgb-l">{faker.lorem.sentence(40)}</P>
       {renderSections()}

@@ -6,8 +6,6 @@ import { SvgIcons } from 'synapse-ui-testing';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Import Components ----------------------------------
 // -----------------------------------------------------------------------------------------
-// import * as SvgIcons from '../npm-components/components/SvgIcons';
-
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -24,14 +22,19 @@ const HeaderTitle = styled.div`
   padding-left: 1.6rem;
 `;
 
-const HeaderText = ({ siteTitle }) => {
+const TitleText = styled.h3`
+  font-weight: 300;
+  font-size: 2.4rem;
+`;
+
+const HeaderText = () => {
   return (
-    <Link to={'/'}>
+    <div>
       <HeaderTitle>
-        <SvgIcons.synapse_circle_logo color="#fff" size={32} rotate_ccw_slow className="mgr-s"/>
-        {siteTitle}
+        <SvgIcons.synapse_circle_logo color="#fff" size={32} rotate_ccw_slow className="mgr-s" />
+        <TitleText>SynapseFi UI</TitleText>
       </HeaderTitle>
-    </Link>
+    </div>
   );
 };
 

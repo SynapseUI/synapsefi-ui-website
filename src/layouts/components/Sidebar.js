@@ -5,12 +5,16 @@ import Link from 'gatsby-link';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Import Components ----------------------------------
 // -----------------------------------------------------------------------------------------
-import HeaderText from './HeaderText';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
 // -----------------------------------------------------------------------------------------
-import itemsForSidebar from '../helpers/itemsForSidebar';
+import dataForSidebar, {
+  SECTION_TEXT,
+  SUB_SECTIONS,
+  SUB_SECTION_TEXT,
+  SUB_SECTION_LINK,
+} from '../../helpers/dataForSidebar';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -20,8 +24,10 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
 
+  margin-top: var(--height-header);
+
   width: var(--width-sidebar);
-  min-height: 100vh;
+  min-height: calc(100vh - var(--height-header));
 
   background-color: var(--bg-color-sidebar);
   color: #fff;
@@ -35,50 +41,41 @@ const SectionWrapper = styled.div`
   grid-gap: 2rem;
 `;
 
-const Section = styled.div`
-  padding: var(--padding-sidebar-section);
-  /* margin: var(--padding-sidebar-section); */
-`;
+const SectionText = styled.div`padding: var(--padding-sidebar-section);`;
 
 const SubSectionWrapper = styled.div`
   margin-top: 1.5rem;
   margin-left: 1.5rem;
   display: grid;
   grid-gap: 1rem;
-
-  /* justify-items: start; */
 `;
 
-const SubSection = styled.div`
+const SubSectionText = styled.div`
   padding: var(--padding-sidebar-sub-section);
   margin: var(--margin-sidebar-sub-section);
-
-  /* background-color: rgba(255,255,255,.1); */
 
   &:hover {
     color: var(--color-teal);
   }
 `;
 
-const Test = styled.div`color: #fff;`;
-
 const Sidebar = ({ siteTitle }) => {
   return (
     <Wrapper>
-      <HeaderText siteTitle={siteTitle} />
-
       <SectionWrapper>
-        {_.map(itemsForSidebar, ({ sectionText, subSections }, sectionName) => {
+        {_.map(dataForSidebar, (sectionVal, sectionKey) => {
           return (
-            <div key={sectionName}>
-              <Section className="font-sidebar font-sidebar--section">{sectionText}</Section>
+            <div key={sectionKey}>
+              <SectionText className="font-sidebar font-sidebar--section">
+                {sectionVal[SECTION_TEXT]}
+              </SectionText>
               <SubSectionWrapper>
-                {_.map(subSections, ({ subSectionText, linkName }) => {
+                {_.map(sectionVal[SUB_SECTIONS], (subSectionVal, subSectionKey) => {
                   return (
-                    <Link to={linkName} key={subSectionText}>
-                      <SubSection className="font-sidebar font-sidebar--sub-section">
-                        {subSectionText}
-                      </SubSection>
+                    <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
+                      <SubSectionText className="font-sidebar font-sidebar--sub-section">
+                        {subSectionVal[SUB_SECTION_TEXT]}
+                      </SubSectionText>
                     </Link>
                   );
                 })}

@@ -3,6 +3,8 @@ import Link from 'gatsby-link';
 
 import styled from 'styled-components';
 
+import SynapseFiHeaderLogo from './HeaderRelated/SynapseFiHeaderLogo';
+
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -26,7 +28,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: 'none',
           }}
         >
-          {siteTitle}
+          <SynapseFiHeaderLogo />
         </Link>
       </h1>
     </div>

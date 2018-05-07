@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import itemsForSidebar from '../helpers/itemsForSidebar';
+import dataForSidebar, { SUB_SECTIONS, SUB_SECTION_TEXT } from '../../helpers/dataForSidebar';
 
 const Wrapper = styled.div`
   border-bottom: 1px solid var(--color-warm-light);
@@ -21,11 +21,11 @@ const PageHeader = ({ pathname }) => {
   const subSectionKey = filteredLinks[1];
 
   if (filteredLinks.length === 0) return null;
-  if (itemsForSidebar[sectionKey] === undefined) return null;
+  if (dataForSidebar[sectionKey] === undefined) return null;
 
   return (
     <Wrapper>
-      <H3>{itemsForSidebar[sectionKey]['subSections'][subSectionKey]['subSectionText']}</H3>
+      <H3>{dataForSidebar[sectionKey][SUB_SECTIONS][subSectionKey][SUB_SECTION_TEXT]}</H3>
     </Wrapper>
   );
 };

@@ -6,16 +6,15 @@ import styled, { injectGlobal, css } from 'styled-components';
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Component Import ------------------------------------
 // -----------------------------------------------------------------------------------------
-import Header from '../components/header';
-import Sidebar from '../components/sidebar';
-import PageHeader from '../components/PageHeader';
+import Header from '../layouts/components/Header';
+import Sidebar from '../layouts/components/Sidebar';
+import PageHeader from '../layouts/components/PageHeader';
 
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Styles Import ------------------------------------
 // -----------------------------------------------------------------------------------------
-import './styles/main.scss';
-import './styles/baseStyle';
-import { relative } from 'path';
+import '../styles/baseStyle';
+import '../styles/sass/main.scss';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -47,8 +46,8 @@ const Layout = ({ children, data, location }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Sidebar siteTitle={data.site.siteMetadata.title} />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header />
+    <Sidebar />
     <RemoveSidebarAndHeaderSpace>
       <Content>
         {location.pathname !== '/' && <PageHeader pathname={location.pathname} />}
