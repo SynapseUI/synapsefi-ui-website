@@ -59,6 +59,28 @@ const SubSectionText = styled.div`
   }
 `;
 
+// -------------------------------------------------------------------------------------
+// ----------------------------------- Sub Render --------------------------------------
+// -------------------------------------------------------------------------------------
+const renderSubsections = subSections => {
+  return (
+    <SubSectionWrapper>
+      {_.map(subSections, (subSectionVal, subSectionKey) => {
+        return (
+          <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
+            <SubSectionText className="font-sidebar font-sidebar--sub-section">
+              {subSectionVal[SUB_SECTION_TEXT]}
+            </SubSectionText>
+          </Link>
+        );
+      })}
+    </SubSectionWrapper>
+  );
+};
+
+// -------------------------------------------------------------------------------------
+// ----------------------------------- Render ------------------------------------------
+// -------------------------------------------------------------------------------------
 const Sidebar = ({ siteTitle }) => {
   return (
     <Wrapper>
@@ -69,17 +91,7 @@ const Sidebar = ({ siteTitle }) => {
               <SectionText className="font-sidebar font-sidebar--section">
                 {sectionVal[SECTION_TEXT]}
               </SectionText>
-              <SubSectionWrapper>
-                {_.map(sectionVal[SUB_SECTIONS], (subSectionVal, subSectionKey) => {
-                  return (
-                    <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
-                      <SubSectionText className="font-sidebar font-sidebar--sub-section">
-                        {subSectionVal[SUB_SECTION_TEXT]}
-                      </SubSectionText>
-                    </Link>
-                  );
-                })}
-              </SubSectionWrapper>
+              {renderSubsections(sectionVal[SUB_SECTIONS])}
             </div>
           );
         })}
