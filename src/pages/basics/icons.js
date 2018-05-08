@@ -15,9 +15,9 @@ const SectionTitle = styled.h3`
 
 const IconListWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fit, 10rem);
   justify-content: center;
-  grid-auto-rows: 100px;
+  grid-auto-rows: 10rem;
   grid-gap: 1.2rem;
 `;
 

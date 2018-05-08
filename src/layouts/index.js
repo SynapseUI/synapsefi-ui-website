@@ -28,8 +28,10 @@ const PositionSidebar = styled.div`
 `;
 
 const RemoveSidebarAndHeaderSpace = styled.div`
-  margin-left: var(--width-sidebar);
   margin-top: var(--height-header);
+  margin-right: var(--min-content-left-and-right-margin);
+
+  margin-left: calc(var(--width-sidebar) + var(--min-content-left-and-right-margin));
 `;
 
 const Content = styled.div`
