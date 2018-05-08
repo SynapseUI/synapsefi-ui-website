@@ -37,7 +37,7 @@ const Icon = styled.div`align-self: end;`;
 
 const renderSvgComponent = (SvgComponent, key) => {
   if (key === 'synapse_circle_logo') {
-    return <SvgComponent color="var(--color-teal)" rotate_ccw_normal />;
+    return <SvgComponent size={40} color="var(--color-teal)" rotate_ccw_normal />;
   }
   
   return <SvgComponent />;
