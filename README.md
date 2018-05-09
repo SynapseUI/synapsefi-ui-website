@@ -16,3 +16,6 @@ then you can start by
 npm install && npm start
 ```
 
+## Website
+
+Deployed at https://synapsefi-ui.netlify.com/
