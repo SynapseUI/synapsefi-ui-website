@@ -2,7 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import styled from 'styled-components';
 
-import getColorsObj from '../../helpers/functions/getColorsObj';
+import processedColorsObj from '../../helpers/processedColorsObj';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -28,8 +29,9 @@ const IndivColorWrapper = styled.div`
   font-size: 1.2rem;
 `;
 
-const BoxColor = styled.div`
+const BoxColor = styled.button`
   cursor: pointer;
+  border: none;
   width: var(--size-color-box);
   height: var(--size-color-box);
   background-color: ${props => props.bgColor};
@@ -48,10 +50,9 @@ const BoxColor = styled.div`
 // ----------------------------------- Render ------------------------------------------
 // -------------------------------------------------------------------------------------
 const Colors = () => {
-  getColorsObj();
   return (
     <Wrapper>
-      {_.map(getColorsObj(), (colors, sectionName) => {
+      {_.map(processedColorsObj, (colors, sectionName) => {
         return (
           <div key={sectionName} className="mgb-l">
             <SectionTitle>{sectionName}</SectionTitle>
@@ -59,7 +60,9 @@ const Colors = () => {
               {colors.map(({ text, strColor }) => {
                 return (
                   <IndivColorWrapper key={strColor}>
-                    <BoxColor bgColor={strColor} />
+                    <CopyToClipboard text={strColor}>
+                      <BoxColor bgColor={strColor} />
+                    </CopyToClipboard>
                     <div>
                       <div>{text}</div>
                       <div>{strColor}</div>

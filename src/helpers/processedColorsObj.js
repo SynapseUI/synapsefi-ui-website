@@ -70,6 +70,4 @@ const loopThroughAllColors = (colorsObj, colorEntries) => {
   return colorsObj;
 };
 
-export default () => {
-  return loopThroughAllColors({}, Object.entries(colors));
-};
+export default loopThroughAllColors({}, Object.entries(colors));
