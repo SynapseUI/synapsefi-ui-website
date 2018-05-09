@@ -1,6 +1,6 @@
 {
-  "name": "synapsefi-ui-test",
-  "description": "Gatsby default starter",
+  "name": "synapsefi-ui-website",
+  "description": "synapsefi-ui-website",
   "version": "1.0.0",
   "author": "Sean Hong <sean@synapsefi.com>",
   "files": [
