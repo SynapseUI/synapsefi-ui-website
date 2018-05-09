@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import processedColorsObj from '../../helpers/processedColorsObj';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -27,6 +27,7 @@ const IndivColorWrapper = styled.div`
   grid-gap: 1rem;
   line-height: 1.2;
   font-size: 1.2rem;
+  grid-auto-columns: max-content;
 `;
 
 const BoxColor = styled.button`
@@ -46,6 +47,17 @@ const BoxColor = styled.button`
   }
 `;
 
+const renderColorText = colorText => {
+  if (colorText.length <= 7) return <div>{colorText}</div>;
+
+  return (
+    <div>
+      <div>rgba</div>
+      <div>{colorText.slice(4)}</div>
+    </div>
+  );
+};
+
 // -------------------------------------------------------------------------------------
 // ----------------------------------- Render ------------------------------------------
 // -------------------------------------------------------------------------------------
@@ -57,15 +69,15 @@ const Colors = () => {
           <div key={sectionName} className="mgb-l">
             <SectionTitle>{sectionName}</SectionTitle>
             <MultiColorsWrapper>
-              {colors.map(({ text, strColor }) => {
+              {colors.map(({ nameText, colorText }) => {
                 return (
-                  <IndivColorWrapper key={strColor}>
-                    <CopyToClipboard text={strColor}>
-                      <BoxColor bgColor={strColor} />
+                  <IndivColorWrapper key={nameText}>
+                    <CopyToClipboard text={colorText}>
+                      <BoxColor bgColor={colorText} />
                     </CopyToClipboard>
                     <div>
-                      <div>{text}</div>
-                      <div>{strColor}</div>
+                      <div>{nameText}</div>
+                      <div>{renderColorText(colorText)}</div>
                     </div>
                   </IndivColorWrapper>
                 );

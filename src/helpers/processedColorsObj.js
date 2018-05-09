@@ -1,8 +1,20 @@
 import { colors } from 'synapse-ui-testing';
+import hexToRgba from 'hex-rgba';
 
 const populateValuesInColorsObj = (colorsObj, keyName, nameColor, strColor) => {
-  const values = { text: nameColor.toLowerCase().replace('_', ' '), strColor };
+  let nameText = '';
+  let colorText = '';
 
+  if (typeof nameColor === 'number') {
+    nameText = nameColor.toString() + '%';
+    colorText = hexToRgba(strColor, nameColor);
+  } else {
+    nameText = nameColor.toLowerCase().replace('_', ' ');
+    colorText = strColor;
+  }
+
+  const values = { nameText, colorText };
+  
   if (colorsObj[keyName] === undefined) colorsObj[keyName] = [values];
   else colorsObj[keyName].push(values);
 };
@@ -14,6 +26,12 @@ const getEndIdxForEndColor = ({ endColor, colorEntries, startIdx, keyName, color
     const [nameColor, strColor] = colorEntries[i];
 
     populateValuesInColorsObj(colorsObj, keyName, nameColor, strColor);
+
+    if (nameColor === 'TEAL' || nameColor === 'ARSENIC') {
+      [75, 50, 25].forEach(percent => {
+        populateValuesInColorsObj(colorsObj, keyName, percent, strColor);
+      });
+    }
 
     if (nameColor === endColor) break;
   }
