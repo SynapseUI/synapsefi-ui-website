@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import _ from 'lodash';
 import styled from 'styled-components';
-import { SvgIcons } from 'synapse-ui-testing';
+import { SvgIcons } from 'synapsefi-ui';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------

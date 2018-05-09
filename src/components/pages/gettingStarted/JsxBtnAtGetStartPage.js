@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'synapse-ui-testing';
+import { Button } from 'synapsefi-ui';
 
 const JsxBtnAtGetStartPage = () => {
   return (
@@ -14,7 +14,7 @@ export default JsxBtnAtGetStartPage;
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
-import { Button } from 'synapse-ui-testing';
+import { Button } from 'synapsefi-ui';
 
 const JsxBtnAtGetStartPage = () => {
   return (

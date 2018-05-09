@@ -5,7 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter/prism';
 import { dark } from 'react-syntax-highlighter/styles/prism';
 
 const Colors = () => {
-  const codeString = 'npm install synapse-ui-testing';
+  const codeString = 'npm install synapsefi-ui';
   return (
     <div className="prism-dark">
       <SyntaxHighlighter language="powershell" style={dark}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgIcons } from 'synapse-ui-testing';
+import { SvgIcons } from 'synapsefi-ui';
 
 const JsxSvgIconsAtGetStartPage = () => {
   return (
@@ -17,7 +17,7 @@ export default JsxSvgIconsAtGetStartPage;
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
-import { SvgIcons } from 'synapse-ui-testing';
+import { SvgIcons } from 'synapsefi-ui';
 
 const JsxSvgIconsAtGetStartPage = () => {
   return (

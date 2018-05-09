@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SvgIcons } from 'synapse-ui-testing';
+import { SvgIcons } from 'synapsefi-ui';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Import Components ----------------------------------

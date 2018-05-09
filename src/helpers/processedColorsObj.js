@@ -1,4 +1,4 @@
-import { colors } from 'synapse-ui-testing';
+import { colors } from 'synapsefi-ui';
 import hexToRgba from 'hex-rgba';
 
 const populateValuesInColorsObj = (colorsObj, keyName, nameColor, strColor) => {
