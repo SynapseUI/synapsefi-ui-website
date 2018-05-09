@@ -54,7 +54,7 @@ const btnData = [
   {
     [TITLE]: 'Small',
     [HEIGHT]: '32px',
-    [FONT_SIZE]: '18px',
+    [FONT_SIZE]: '16px',
     [BORDER_RADIUS]: '3px',
     [PADDING_RIGHT_LEFT]: '32px',
   },
