@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import _ from 'lodash';
 import styled from 'styled-components';
 import { SvgIcons } from 'synapsefi-ui';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Styled Components ----------------------------------
@@ -22,6 +23,9 @@ const IconListWrapper = styled.div`
 `;
 
 const IconGroupWrapper = styled.div`
+  cursor: pointer;
+  border: none;
+
   font-size: 1.2rem;
 
   margin: 0 auto;
@@ -31,28 +35,46 @@ const IconGroupWrapper = styled.div`
 
   justify-items: center;
   grid-gap: 1.2rem;
+
+  transition: all .2s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transition: all 0s;
+    transform: translateY(-2px);
+  }
+
 `;
 
-const Icon = styled.div`align-self: end;`;
+const Icon = styled.div`
+  align-self: end;
 
-const renderSvgComponent = (SvgComponent, key) => {
-  if (key === 'synapse_circle_logo') {
+
+`;
+
+const renderSvgComponent = (SvgComponent, text) => {
+  if (text === 'synapse_circle_logo') {
     return <SvgComponent size={40} color="var(--color-teal)" rotate_ccw_normal />;
   }
-  
+
   return <SvgComponent />;
 };
 
 const Icons = () => (
   <div>
     <IconListWrapper>
-      {_.map(SvgIcons, (SvgComponent, key) => {
-        if (key === '__esModule') return null;
+      {_.map(SvgIcons, (SvgComponent, text) => {
+        if (text === '__esModule') return null;
         return (
-          <IconGroupWrapper key={key}>
-            <Icon>{renderSvgComponent(SvgComponent, key)}</Icon>
-            <div style={{ textAlign: 'center' }}>{key}</div>
-          </IconGroupWrapper>
+          <CopyToClipboard key={text} text={text}>
+            <IconGroupWrapper>
+              <Icon>{renderSvgComponent(SvgComponent, text)}</Icon>
+              <div style={{ textAlign: 'center' }}>{text}</div>
+            </IconGroupWrapper>
+          </CopyToClipboard>
         );
       })}
     </IconListWrapper>
