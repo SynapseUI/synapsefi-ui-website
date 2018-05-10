@@ -4,15 +4,15 @@ import JsxSnippetAndRenderedComp from '../../components/common/JsxSnippetAndRend
 
 import JsxBtnsDiffSizes, * as diffSizeBtns from '../../components/pages/components/buttons/JsxBtnsDiffSizes';
 
-const Buttons = () => {
+const Button = () => {
   return (
     <div>
       <JsxSnippetAndRenderedComp
-        jsxSnippet={SvgIcons.jsxSnippet}
-        Component={JsxSvgIconsAtGetStartPage}
+        jsxSnippet={diffSizeBtns.jsxSnippet}
+        Component={JsxBtnsDiffSizes}
       />
     </div>
   );
 };
 
-export default Buttons;
+export default Button;

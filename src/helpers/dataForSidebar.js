@@ -11,6 +11,8 @@ export const BASICS_BUTTON_GUIDELINE = 'button-guideline';
 export const BASICS_COLOR = 'color-list';
 export const BASICS_SVG_ICON_LIST = 'svg-icon-list';
 
+export const COMPONENTS_BUTTON = 'button';
+
 export default {
   [BASICS]: {
     [SECTION_TEXT]: 'Basics',
@@ -35,6 +37,11 @@ export default {
   },
   [COMPONENTS]: {
     [SECTION_TEXT]: 'Components',
-    [SUB_SECTIONS]: {},
+    [SUB_SECTIONS]: {
+      [COMPONENTS_BUTTON]: {
+        [SUB_SECTION_TEXT]: 'Button',
+        [SUB_SECTION_LINK]: `/${COMPONENTS}/${COMPONENTS_BUTTON}/`,
+      },
+    },
   },
 };
