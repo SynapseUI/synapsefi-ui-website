@@ -9,7 +9,7 @@ export const COMPONENTS = 'components';
 export const BASICS_GETTING_STARTED = 'getting-started';
 export const BASICS_ICONS = 'icons';
 export const BASICS_COLOR = 'colors';
-export const BASICS_BUTTONS = 'buttons';
+export const BASICS_BUTTON_GUIDELINE = 'button-guideline';
 
 export default {
   [BASICS]: {
@@ -19,16 +19,16 @@ export default {
         [SUB_SECTION_TEXT]: 'Getting Started',
         [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_GETTING_STARTED}/`,
       },
-      [BASICS_BUTTONS]: {
-        [SUB_SECTION_TEXT]: 'Buttons',
-        [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_BUTTONS}/`,
+      [BASICS_BUTTON_GUIDELINE]: {
+        [SUB_SECTION_TEXT]: 'Button Guideline',
+        [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_BUTTON_GUIDELINE}/`,
       },
       [BASICS_COLOR]: {
-        [SUB_SECTION_TEXT]: 'Colors',
+        [SUB_SECTION_TEXT]: 'Color List',
         [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_COLOR}/`,
       },
       [BASICS_ICONS]: {
-        [SUB_SECTION_TEXT]: 'Svg Icons',
+        [SUB_SECTION_TEXT]: 'Svg Icon List',
         [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_ICONS}/`,
       },
     },
