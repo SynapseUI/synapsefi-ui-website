@@ -7,9 +7,9 @@ export const BASICS = 'basics';
 export const COMPONENTS = 'components';
 
 export const BASICS_GETTING_STARTED = 'getting-started';
-export const BASICS_ICONS = 'icons';
-export const BASICS_COLOR = 'colors';
 export const BASICS_BUTTON_GUIDELINE = 'button-guideline';
+export const BASICS_COLOR = 'color-list';
+export const BASICS_SVG_ICON_LIST = 'svg-icon-list';
 
 export default {
   [BASICS]: {
@@ -27,9 +27,9 @@ export default {
         [SUB_SECTION_TEXT]: 'Color List',
         [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_COLOR}/`,
       },
-      [BASICS_ICONS]: {
+      [BASICS_SVG_ICON_LIST]: {
         [SUB_SECTION_TEXT]: 'Svg Icon List',
-        [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_ICONS}/`,
+        [SUB_SECTION_LINK]: `/${BASICS}/${BASICS_SVG_ICON_LIST}/`,
       },
     },
   },

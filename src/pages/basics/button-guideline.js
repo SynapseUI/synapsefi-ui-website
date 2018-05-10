@@ -77,7 +77,7 @@ const btnData = [
 // -------------------------------------------------------------------------------------
 // ----------------------------------- Render ------------------------------------------
 // -------------------------------------------------------------------------------------
-const Buttons = () => {
+const ButtonGuideLine = () => {
   return (
     <Wrapper>
       {btnData.map(btnObj => {
@@ -113,4 +113,4 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;
+export default ButtonGuideLine;

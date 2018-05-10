@@ -61,7 +61,7 @@ const renderColorText = colorText => {
 // -------------------------------------------------------------------------------------
 // ----------------------------------- Render ------------------------------------------
 // -------------------------------------------------------------------------------------
-const Colors = () => {
+const ColorList = () => {
   return (
     <Wrapper>
       {_.map(processedColorsObj, (colors, sectionName) => {
@@ -90,4 +90,4 @@ const Colors = () => {
   );
 };
 
-export default Colors;
+export default ColorList;

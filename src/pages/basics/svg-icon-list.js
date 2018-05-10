@@ -63,7 +63,7 @@ const renderSvgComponent = (SvgComponent, text) => {
   return <SvgComponent />;
 };
 
-const Icons = () => (
+const SvgIconList = () => (
   <div>
     <IconListWrapper>
       {_.map(SvgIcons, (SvgComponent, text) => {
@@ -81,4 +81,4 @@ const Icons = () => (
   </div>
 );
 
-export default Icons;
+export default SvgIconList;
