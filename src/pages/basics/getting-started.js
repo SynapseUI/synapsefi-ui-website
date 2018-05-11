@@ -11,12 +11,12 @@ const GettingStarted = () => {
     <div>
       {/* <h1 className="h1 mgb-s">Getting Started</h1> */}
 
-      <p className="p">Install 'synapse-ui' by typing the line blow to your command line.</p>
+      <p className="p">Install 'synapsefi-ui' by typing the line blow to your command line.</p>
 
       <InstallationCodeAtGetStartPage />
 
       <p className="p">
-        Then you can use 'synapse ui' as code snippet below. You can render Button by:
+        Then you can use 'synapsefi-ui' as code snippet below. You can render Button by:
       </p>
 
       <JsxSnippetAndRenderedComp jsxSnippet={Btn.jsxSnippet} Component={JsxBtnAtGetStartPage} />

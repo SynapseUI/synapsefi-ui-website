@@ -19,7 +19,7 @@ const JsxBtnsDiffFunctions = () => {
         <Button remove>Remove</Button>
         <Button isLoading> --- </Button>
         <Button isLoading> length of text matters </Button>
-        <Button isDisabled> I am disabled</Button>
+        <Button isDisabled> Disabled </Button>
       </div>
     </div>
   );
@@ -50,7 +50,7 @@ const JsxBtnsDiffFunctions = () => {
         <Button remove>Remove</Button>
         <Button isLoading> --- </Button>
         <Button isLoading> length of text matters </Button>
-        <Button isDisabled> I am disabled</Button>
+        <Button isDisabled> Disabled </Button>
       </div>
     </div>
   );
