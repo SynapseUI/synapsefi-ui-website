@@ -1,0 +1,28 @@
+.components {
+  &__sub-section-title {
+    display: flex;
+    align-items: center;
+    
+    font-weight: 300;
+    font-size: 2.4rem;
+    line-height: 1;
+    height: 2.4rem;
+
+
+    &::before {
+      content: '';
+      display: block;
+      width: 1rem;
+      height: 100%;
+      background-color: rgba(4, 156, 176, 0.25);
+      margin-right: .8rem;
+    }
+  }
+
+  &__section-divider {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(54, 65, 73, 0.1);
+    margin: 6rem 0 3rem 0;
+  }
+}
