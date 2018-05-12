@@ -12,6 +12,7 @@ export const BASICS_COLOR = 'color-list';
 export const BASICS_SVG_ICON_LIST = 'svg-icon-list';
 
 export const COMPONENTS_BUTTON = 'button';
+export const COMPONENTS_SVG_ICONS = 'svg-icons';
 
 export default {
   [BASICS]: {
@@ -41,6 +42,10 @@ export default {
       [COMPONENTS_BUTTON]: {
         [SUB_SECTION_TEXT]: 'Button',
         [SUB_SECTION_LINK]: `/${COMPONENTS}/${COMPONENTS_BUTTON}/`,
+      },
+      [COMPONENTS_SVG_ICONS]: {
+        [SUB_SECTION_TEXT]: 'Svg Icons',
+        [SUB_SECTION_LINK]: `/${COMPONENTS}/${COMPONENTS_SVG_ICONS}/`,
       },
     },
   },
