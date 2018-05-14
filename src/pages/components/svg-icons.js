@@ -7,6 +7,7 @@ import JsxSnippetAndRenderedComp from '../../components/common/JsxSnippetAndRend
 
 import JsxSvgIconDiffSizes, * as jsxSvgIconDiffSizes from '../../components/pages/components/svgIcons/JsxSvgIconDiffSizes';
 import JsxSvgIconDiffColors, * as jsxSvgIconDiffColors from '../../components/pages/components/svgIcons/JsxSvgIconDiffColors';
+import JsxSvgIconAnimations, * as jsxSvgIconAnimations from '../../components/pages/components/svgIcons/JsxSvgIconAnimations';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data -----------------------------------------------
@@ -22,11 +23,11 @@ const dataForThisPage = [
     code: jsxSvgIconDiffColors.jsxSnippet,
     Component: JsxSvgIconDiffColors,
   },
-  // {
-  //   title: ANIMATIONS,
-  //   code: jsxBtnsHowToAddOnClick.jsxSnippet,
-  //   Component: JsxBtnsHowToAddOnClick,
-  // },
+  {
+    title: ANIMATIONS,
+    code: jsxSvgIconAnimations.jsxSnippet,
+    Component: JsxSvgIconAnimations,
+  },
 ];
 
 // -------------------------------------------------------------------------------------
