@@ -5,9 +5,9 @@ import dataForSidebar, { SUB_SECTIONS, SUB_SECTION_TEXT } from '../../helpers/da
 
 const Wrapper = styled.div`
   border-bottom: 1px solid var(--color-warm-light);
-  margin-bottom: 4rem;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 `;
 
 const H3 = styled.h3`
