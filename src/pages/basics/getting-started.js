@@ -11,7 +11,10 @@ const GettingStarted = () => {
     <div>
       {/* <h1 className="h1 mgb-s">Getting Started</h1> */}
 
-      <p className="p">Install 'synapsefi-ui' by typing the line blow to your command line.</p>
+      <p className="p">
+        "synapse-ui" is an UI library built with "styled-components". So you need to do npm install both
+        'synapsefi-ui' and 'styled-components'.
+      </p>
 
       <InstallationCodeAtGetStartPage />
 
