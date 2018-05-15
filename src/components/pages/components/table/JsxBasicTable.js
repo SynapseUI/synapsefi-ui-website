@@ -1,5 +1,5 @@
 import React from 'react';
-import faker from 'faker';
+import { name, internet } from 'faker';
 import { Table } from 'synapsefi-ui';
 import { range } from 'lodash';
 
@@ -8,9 +8,9 @@ const renderTBody = () => (
     {range(5).map(num => {
       return (
         <tr key={num}>
-          <td>{faker.name.firstName()}</td>
-          <td>{faker.name.lastName()}</td>
-          <td>{faker.internet.email()}</td>
+          <td>{name.firstName()}</td>
+          <td>{name.lastName()}</td>
+          <td>{internet.email()}</td>
         </tr>
       );
     })}
@@ -39,7 +39,7 @@ export default JsxBasicTable;
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
-import faker from 'faker';
+import { name, internet } from 'faker';
 import { Table } from 'synapsefi-ui';
 import { range } from 'lodash';
 
@@ -48,9 +48,9 @@ const renderTBody = () => (
     {range(5).map(num => {
       return (
         <tr key={num}>
-          <td>{faker.name.firstName()}</td>
-          <td>{faker.name.lastName()}</td>
-          <td>{faker.internet.email()}</td>
+          <td>{name.firstName()}</td>
+          <td>{name.lastName()}</td>
+          <td>{internet.email()}</td>
         </tr>
       );
     })}
