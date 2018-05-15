@@ -34,7 +34,6 @@ const dataForThisPage = [
 // ----------------------------------- Render ------------------------------------------
 // -------------------------------------------------------------------------------------
 const SvgIcons = () => {
-  console.log('dataForThisPage: ', dataForThisPage);
   return (
     <div>
       <div>
