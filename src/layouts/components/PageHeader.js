@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import dataForSidebar, { SUB_SECTIONS, SUB_SECTION_TEXT } from '../../helpers/dataForSidebar';
 
@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  ${props => props.addMoreMargin && css`margin-bottom: 3rem;`};
 `;
 
 const H3 = styled.h3`
@@ -24,7 +25,7 @@ const PageHeader = ({ pathname }) => {
   if (dataForSidebar[sectionKey] === undefined) return null;
 
   return (
-    <Wrapper>
+    <Wrapper addMoreMargin={sectionKey === 'basics'}>
       <H3>{dataForSidebar[sectionKey][SUB_SECTIONS][subSectionKey][SUB_SECTION_TEXT]}</H3>
     </Wrapper>
   );
