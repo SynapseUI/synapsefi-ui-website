@@ -1,5 +1,7 @@
 import React from 'react';
 
+import shortenTitleStr from '../../helpers/functions/shortenTitleStr';
+
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Component Import ------------------------------------
 // -----------------------------------------------------------------------------------------
@@ -36,6 +38,11 @@ const dataForThisPage = [
 const Button = () => {
   return (
     <div>
+      <div>
+        {dataForThisPage.map(({ title }) => {
+          return <div key={title}>{shortenTitleStr(title)}</div>;
+        })}
+      </div>
       {dataForThisPage.map(obj => {
         return (
           <div key={obj.title}>
