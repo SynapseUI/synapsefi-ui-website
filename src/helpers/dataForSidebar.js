@@ -36,11 +36,13 @@ const dataForComponentsSection = [
 
 // -------------------------------------------------------------------------
 
-const injectSubSectionData = (subsectionData, subSectionsObj) => {
+const injectSubSectionData = (subsectionData, dataForSidebar, sectionName) => {
+  const subSectionsObj = dataForSidebar[sectionName][SUB_SECTIONS];
+
   subsectionData.forEach(({ text, link }) => {
     subSectionsObj[link] = {};
     subSectionsObj[link][SUB_SECTION_TEXT] = text;
-    subSectionsObj[link][SUB_SECTION_LINK] = link;
+    subSectionsObj[link][SUB_SECTION_LINK] = `/${sectionName}/${link}/`;
   });
 };
 
@@ -49,7 +51,7 @@ const dataForSidebar = {
   [COMPONENTS]: { [SECTION_TEXT]: 'Components', [SUB_SECTIONS]: {} },
 };
 
-injectSubSectionData(dataForBasicsSection, dataForSidebar[BASICS][SUB_SECTIONS]);
-injectSubSectionData(dataForComponentsSection, dataForSidebar[COMPONENTS][SUB_SECTIONS]);
+injectSubSectionData(dataForBasicsSection, dataForSidebar, BASICS);
+injectSubSectionData(dataForComponentsSection, dataForSidebar, COMPONENTS);
 
 export default dataForSidebar;
