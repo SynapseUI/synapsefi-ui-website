@@ -7,8 +7,9 @@ export const SUB_SECTION_LINK = 'SUB_SECTION_LINK';
 
 export const BASICS = 'basics';
 export const COMPONENTS = 'components';
+// export const UIAAS = 'uiaas';
 
-// -------------------------------------------------------------------------
+// Basics --------------------------------------------------------------------
 
 export const BASICS_GETTING_STARTED = 'getting-started';
 export const BASICS_BUTTON_GUIDELINE = 'button-guideline';
@@ -22,16 +23,18 @@ const dataForBasicsSection = [
   { text: 'Svg Icon List', link: BASICS_SVG_ICON_LIST },
 ];
 
-// -------------------------------------------------------------------------
+// Dashboard ----------------------------------------------------------------
 
 export const COMPONENTS_BUTTON = 'button';
 export const COMPONENTS_SVG_ICONS = 'svg-icons';
 export const COMPONENTS_TABLE = 'table';
+export const COMPONENTS_MODAL = 'modal';
 
 const dataForComponentsSection = [
   { text: 'Button', link: COMPONENTS_BUTTON },
   { text: 'Svg Icons', link: COMPONENTS_SVG_ICONS },
   { text: 'Table', link: COMPONENTS_TABLE },
+  { text: 'Modal', link: COMPONENTS_MODAL },
 ];
 
 // -------------------------------------------------------------------------
