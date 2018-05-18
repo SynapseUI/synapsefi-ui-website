@@ -1,9 +1,13 @@
 import React from 'react';
 
+import SubSectionPageForComponents from '../../components/common/SubSectionPageForComponents';
+
+import dataForModal from '../../pagesData/components/dataForModal';
+
 const modal = () => {
   return (
     <div>
-      <div>empty modal</div>
+      <SubSectionPageForComponents dataForThisPage={dataForModal} />
     </div>
   );
 };

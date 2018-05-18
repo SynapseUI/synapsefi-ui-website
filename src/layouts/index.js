@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+// import Helmet from 'react-helmet';
 import styled, { injectGlobal, css } from 'styled-components';
 
 // -----------------------------------------------------------------------------------------
@@ -41,13 +41,13 @@ const Content = styled.div`
 
 const Layout = ({ children, data, location }) => (
   <div style={{ position: 'relative' }}>
-    <Helmet
+    {/* <Helmet
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-    />
+    /> */}
     <Header />
     <Sidebar />
     <RemoveSidebarAndHeaderSpace>
