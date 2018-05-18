@@ -32,15 +32,11 @@ class JsxModalBasic extends Component {
           Open Basic Modal
         </Button>
         <Modal
-          // ******** Required ******** //
           isOpen={this.state.isOpen}
           closeModal={this.closeModal}
-          // ************************** //
-          // -------- Optional ------------- //
           headerText={'I am a Header'}
           height={'500px'}
           width={'700px'}
-          // ------------------------------- //
         >
           <div style={font}>
             Sandwich your modal contents
@@ -97,15 +93,11 @@ class JsxModalBasic extends Component {
           Open Basic Modal
         </Button>
         <Modal
-          // ******** Required ******** //
           isOpen={this.state.isOpen}
           closeModal={this.closeModal}
-          // ************************** //
-          // -------- Optional ------------- //
           headerText={'I am a Header'}
           height={'500px'}
           width={'700px'}
-          // ------------------------------- //
         >
           <div style={font}>
             Sandwich your modal contents
