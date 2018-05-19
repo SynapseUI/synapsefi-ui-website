@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import { range } from 'lodash';
 import { Modal, Button } from 'synapsefi-ui';
 
-const font = { fontSize: '20px' };
-const bold = { ...font, fontWeight: 'bold' };
-const content = { ...bold, marginLeft: '20px' };
-const emptySpace = { height: '32px' };
-
-class JsxModalBasic extends Component {
+class JsxModalWithBtn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +21,28 @@ class JsxModalBasic extends Component {
   }
 
   renderModal() {
+    const btnObjs = [
+      {
+        text: 'Remove',
+        btnProps: {
+          size: 'large',
+          style: 'remove',
+        },
+      },
+      {
+        text: 'Secondary',
+        btnProps: {
+          style: 'secondary',
+        },
+      },
+      {
+        text: 'primary btn',
+        btnProps: {
+          style: 'primary',
+        },
+      },
+    ];
+
     return (
       <Modal
         isOpen={this.state.isOpen}
@@ -33,16 +50,9 @@ class JsxModalBasic extends Component {
         headerText={'I am a Header'}
         height={'500px'}
         width={'700px'}
+        btnObjs={btnObjs}
       >
-        <div style={font}>
-          Sandwich your modal contents
-          in between Opening and closing Modal tag 
-          Like this:
-        </div>
-        <div style={emptySpace} />
-        <div style={bold}>{'<Modal>'}</div>
-        <div style={content}>{'{contents}'}</div>
-        <div style={bold}>{'</Modal>'}</div>
+        <div>contents</div>
       </Modal>
     );
   }
@@ -50,8 +60,8 @@ class JsxModalBasic extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.openModal}>
-          Open Basic Modal
+        <Button medium onClick={this.openModal}>
+          Modal with Buttons
         </Button>
         {this.renderModal()}
       </div>
@@ -59,7 +69,7 @@ class JsxModalBasic extends Component {
   }
 }
 
-export default JsxModalBasic;
+export default JsxModalWithBtn;
 
 // ------------------------------------------------------------
 
@@ -67,12 +77,7 @@ export const jsxSnippet = `import React, { Component } from 'react';
 import { range } from 'lodash';
 import { Modal, Button } from 'synapsefi-ui';
 
-const font = { fontSize: '20px' };
-const bold = { ...font, fontWeight: 'bold' };
-const content = { ...bold, marginLeft: '20px' };
-const emptySpace = { height: '32px' };
-
-class JsxModalBasic extends Component {
+class JsxModalWithBtn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -91,6 +96,28 @@ class JsxModalBasic extends Component {
   }
 
   renderModal() {
+    const btnObjs = [
+      {
+        text: 'Remove',
+        btnProps: {
+          size: 'large',
+          style: 'remove',
+        },
+      },
+      {
+        text: 'Secondary',
+        btnProps: {
+          style: 'secondary',
+        },
+      },
+      {
+        text: 'primary btn',
+        btnProps: {
+          style: 'primary',
+        },
+      },
+    ];
+
     return (
       <Modal
         isOpen={this.state.isOpen}
@@ -98,16 +125,9 @@ class JsxModalBasic extends Component {
         headerText={'I am a Header'}
         height={'500px'}
         width={'700px'}
+        btnObjs={btnObjs}
       >
-        <div style={font}>
-          Sandwich your modal contents
-          in between Opening and closing Modal tag 
-          Like this:
-        </div>
-        <div style={emptySpace} />
-        <div style={bold}>{'<Modal>'}</div>
-        <div style={content}>{'{contents}'}</div>
-        <div style={bold}>{'</Modal>'}</div>
+        <div>contents</div>
       </Modal>
     );
   }
@@ -115,8 +135,8 @@ class JsxModalBasic extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.openModal}>
-          Open Basic Modal
+        <Button medium onClick={this.openModal}>
+          Modal with Buttons
         </Button>
         {this.renderModal()}
       </div>
@@ -124,5 +144,5 @@ class JsxModalBasic extends Component {
   }
 }
 
-export default JsxModalBasic;
+export default JsxModalWithBtn;
 `;
