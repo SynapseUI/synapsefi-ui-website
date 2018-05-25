@@ -35,6 +35,9 @@ const dataForComponentsSection = [
   { text: 'Svg Icons', link: COMPONENTS_SVG_ICONS },
   { text: 'Table', link: COMPONENTS_TABLE },
   { text: 'Modal', link: COMPONENTS_MODAL },
+  { text: 'Input', link: 'input'},
+  { text: 'Textarea', link: 'textarea'},
+  { text: 'Radio Group', link: 'radio-group'}
 ];
 
 // -------------------------------------------------------------------------
