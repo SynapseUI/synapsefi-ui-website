@@ -18,7 +18,7 @@ class InputBasic extends React.Component {
 
     return (
       <div>
-        <div>
+        <div className="input-display-box">
           <Input
             value={this.state.username}
             onChange={e => this.setState({
@@ -39,7 +39,7 @@ class InputBasic extends React.Component {
             })}
             className='input-basic-page-row'
             propName='password'
-            placeholder="i.e. Not '12345'"
+            placeholder="i.e. Not '12345'..."
             label='Password'
           />
 
@@ -76,24 +76,20 @@ class InputBasic extends React.Component {
       username: ''
     }
   }
-  render(){
 
+  render(){
     return (
-      <div>
-        <div>
-          <Input
-            value={this.state.username}
-            onChange={e => this.setState({
-              username: e.target.value
-            })}
-            className='input-basic-page-row'
-            propName='username'
-            placeholder='i.e. John Smith'
-            label='Username'
-            description="Or email address"
-          />
-        </div>
-      </div>
+      <Input
+        value={this.state.username}
+        onChange={e => this.setState({
+          username: e.target.value
+        })}
+        className='input-basic-page-row'
+        propName='username'
+        placeholder='i.e. John Smith'
+        label='Username'
+        description="Or email"
+      />
     );
   }
 };

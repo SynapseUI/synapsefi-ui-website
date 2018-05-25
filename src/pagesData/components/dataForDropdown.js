@@ -2,35 +2,29 @@
 // ----------------------------------- Component Import ------------------------------------
 // -----------------------------------------------------------------------------------------
 
-import InputBasic, * as inputBasic from '../../components/pages/components/input/InputBasic';
-import InputError, * as inputError from '../../components/pages/components/input/InputError';
-import InputDisabled, * as inputDisabled from '../../components/pages/components/input/InputDisabled';
+import DropdownBasic, * as dropdownBasic from '../../components/pages/components/dropdown/DropdownBasic';
+import DropdownSearch, * as dropdownSearch from '../../components/pages/components/dropdown/DropdownSearch';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ String Data ----------------------------------------
 // -----------------------------------------------------------------------------------------
 
 const BASIC = 'Basic';
-const ERROR = 'Error Message';
-const DISABLED = 'Disabled Input'
+const SEARCH = 'Search'
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------  Data ----------------------------------------------
 // -----------------------------------------------------------------------------------------
+
 export default [
   {
     title: BASIC,
-    code: inputBasic.jsxSnippet,
-    Component: InputBasic,
+    code: dropdownBasic.jsxSnippet,
+    Component: DropdownBasic,
   },
   {
-    title: ERROR,
-    code: inputError.jsxSnippet,
-    Component: InputError
-  },
-  {
-    title: DISABLED,
-    code: inputDisabled.jsxSnippet,
-    Component: InputDisabled
-  },
+    title: SEARCH,
+    code: dropdownSearch.jsxSnippet,
+    Component: DropdownSearch,
+  }
 ];

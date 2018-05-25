@@ -12,7 +12,7 @@ class RadioGroupBasic extends React.Component {
   render(){
     return (
       <div>
-        <div>
+        <div className="input-display-box">
           <RadioGroup
             value={this.state.question}
             onChange={e => this.setState({
@@ -51,23 +51,19 @@ class RadioGroupBasic extends React.Component {
 
   render(){
     return (
-      <div>
-        <div>
-          <RadioGroup
-            value={this.state.story}
-            onChange={e => this.setState({
-              story: e.target.value
-            })}
-            className='input-basic-page-row'
-            propName='story'
-            label='The Question:'
-            options={[
-              { key: '2B', text: 'To Be' },
-              { key: 'NOT-2B', text: 'Not To Be' },
-            ]}
-          />
-        </div>
-      </div>
+      <RadioGroup
+        value={this.state.story}
+        onChange={e => this.setState({
+          story: e.target.value
+        })}
+        className='input-basic-page-row'
+        propName='story'
+        label='The Question:'
+        options={[
+          { key: '2B', text: 'To Be' },
+          { key: 'NOT-2B', text: 'Not To Be' },
+        ]}
+      />
     );
   }
 };

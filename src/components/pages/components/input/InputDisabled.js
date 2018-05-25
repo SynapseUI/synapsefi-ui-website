@@ -12,7 +12,7 @@ class InputDisabled extends React.Component {
   render(){
     return (
       <div>
-        <div>
+        <div className="input-display-box">
           <Input
             value={this.state.staticText}
             disabled
@@ -44,23 +44,20 @@ class InputDisabled extends React.Component {
       staticText: 'This is unselectable'
     }
   }
+
   render(){
 
     return (
-      <div>
-        <div>
-          <Input
-            value={this.state.staticText}
-            disabled
-            onChange={e => this.setState({
-              staticText: e.target.value
-            })}
-            className='input-basic-page-row'
-            propName='staticText'
-            label="Disabled"
-          />
-        </div>
-      </div>
+      <Input
+        value={this.state.staticText}
+        disabled
+        onChange={e => this.setState({
+          staticText: e.target.value
+        })}
+        className='input-basic-page-row'
+        propName='staticText'
+        label="Disabled"
+      />
     );
   }
 };

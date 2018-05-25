@@ -12,7 +12,7 @@ class TextareaBasic extends React.Component {
   render(){
     return (
       <div>
-        <div>
+        <div className="input-display-box">
           <Textarea
             value={this.state.story}
             onChange={e => this.setState({
@@ -48,21 +48,17 @@ class TextareaBasic extends React.Component {
 
   render(){
     return (
-      <div>
-        <div>
-          <Textarea
-            value={this.state.story}
-            onChange={e => this.setState({
-              story: e.target.value
-            })}
-            className='input-basic-page-row'
-            propName='story'
-            label='Life Story'
-            description='Tell me your life story'
-            placeholder="Or how is your day?"
-          />
-        </div>
-      </div>
+      <Textarea
+        value={this.state.story}
+        onChange={e => this.setState({
+          story: e.target.value
+        })}
+        className='input-basic-page-row'
+        propName='story'
+        label='Life Story'
+        description='Tell me your life story'
+        placeholder="Or how is your day?"
+      />
     );
   }
 };

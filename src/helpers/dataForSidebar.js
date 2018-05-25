@@ -29,15 +29,22 @@ export const COMPONENTS_BUTTON = 'button';
 export const COMPONENTS_SVG_ICONS = 'svg-icons';
 export const COMPONENTS_TABLE = 'table';
 export const COMPONENTS_MODAL = 'modal';
+export const COMPONENTS_INPUT = 'input';
+export const COMPONENTS_TEXTAREA = 'textarea';
+export const COMPONENTS_RADIO_GROUP = 'radio-group';
+export const COMPONENTS_CHECKBOX_GROUP = 'checkbox-group';
+export const COMPONENTS_DROPDOWN = 'dropdown';
 
 const dataForComponentsSection = [
   { text: 'Button', link: COMPONENTS_BUTTON },
   { text: 'Svg Icons', link: COMPONENTS_SVG_ICONS },
   { text: 'Table', link: COMPONENTS_TABLE },
   { text: 'Modal', link: COMPONENTS_MODAL },
-  { text: 'Input', link: 'input'},
-  { text: 'Textarea', link: 'textarea'},
-  { text: 'Radio Group', link: 'radio-group'}
+  { text: 'Input', link: COMPONENTS_INPUT},
+  { text: 'Textarea', link: COMPONENTS_TEXTAREA},
+  { text: 'Radio Group', link: COMPONENTS_RADIO_GROUP},
+  { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP},
+  { text: 'Dropdown', link: COMPONENTS_DROPDOWN},
 ];
 
 // -------------------------------------------------------------------------

@@ -16,7 +16,7 @@ class InputError extends React.Component {
 
     return (
       <div>
-        <div>
+        <div className="input-display-box">
           <Input
             value={this.state.errorInput}
             onChange={e => this.setState({
@@ -56,22 +56,18 @@ class InputError extends React.Component {
       ? 'I AM ERROR' : '';
 
     return (
-      <div>
-        <div>
-          <Input
-            value={this.state.errorInput}
-            onChange={e => this.setState({
-              errorInput: e.target.value
-            })}
-            className='input-basic-page-row'
+      <Input
+        value={this.state.errorInput}
+        onChange={e => this.setState({
+          errorInput: e.target.value
+        })}
+        className='input-basic-page-row'
 
-            error={errorMessage}
-            propName='errorInput'
-            placeholder="to show an error message"
-            label="Type 'error'"
-          />
-        </div>
-      </div>
+        error={errorMessage}
+        propName='errorInput'
+        placeholder="to show an error message"
+        label="Type 'error'"
+      />
     );
   }
 };
