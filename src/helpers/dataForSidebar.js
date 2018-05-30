@@ -34,6 +34,7 @@ export const COMPONENTS_TEXTAREA = 'textarea';
 export const COMPONENTS_RADIO_GROUP = 'radio-group';
 export const COMPONENTS_CHECKBOX_GROUP = 'checkbox-group';
 export const COMPONENTS_DROPDOWN = 'dropdown';
+export const COMPONENTS_FORM = 'form';
 
 const dataForComponentsSection = [
   { text: 'Button', link: COMPONENTS_BUTTON },
@@ -45,6 +46,8 @@ const dataForComponentsSection = [
   { text: 'Radio Group', link: COMPONENTS_RADIO_GROUP},
   { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP},
   { text: 'Dropdown', link: COMPONENTS_DROPDOWN},
+  { text: 'Form', link: COMPONENTS_FORM }
+
 ];
 
 // -------------------------------------------------------------------------

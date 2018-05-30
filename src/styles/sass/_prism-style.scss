@@ -25,3 +25,19 @@
     margin: 0 !important;
   }
 }
+
+.prism-dark-rows {
+  display: grid !important;
+  grid-gap: 3.5rem;
+  margin-top: 3.5rem;
+
+  &>pre {
+    border: none !important;
+    text-shadow: none !important;
+    border-radius: 4px !important;
+    background-color: var(--bg-color-sidebar) !important;
+    box-shadow: 0 0 1px var(--bg-color-sidebar);
+    font-size: 1.4rem !important;
+    margin: 0 !important;
+  }
+}
