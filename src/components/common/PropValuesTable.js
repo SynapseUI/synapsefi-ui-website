@@ -18,16 +18,25 @@ const TRow = styled.tr`
   }
 `;
 
+const Title = styled.h1`
+  margin: 32px 0px;
+`;
+
 class PropValuesTable extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      toggleTable: true
-    }
-
+    this.renderTitle = this.renderTitle.bind(this);
     this.renderHeader = this.renderHeader.bind(this);
     this.renderBody = this.renderBody.bind(this);
+  }
+
+  renderTitle(){
+    if(this.props.propValues.title){
+      return <Title>{this.props.propValues.title}</Title>
+    }
+
+    return null;
   }
 
   renderHeader(){
@@ -48,7 +57,7 @@ class PropValuesTable extends React.Component {
     return (
       <tbody>
         {
-          propValues.map((item, idx) => {
+          propValues.data.map((item, idx) => {
             return (
               <TRow key={idx}>
                 <td>{item.name}</td>
@@ -64,16 +73,18 @@ class PropValuesTable extends React.Component {
   }
 
   render(){
-    if (typeof this.props.propValues === 'undefined'){
+    if (typeof this.props.propValues === 'undefined' || !this.props.toggleTable){
       return null;
     }
 
     return(
       <Main>
-        {this.props.toggleTable && <Table>
+        {this.renderTitle(this.props.propValues.title)}
+
+        <Table>
           {this.renderHeader()}
           {this.renderBody()}
-        </Table>}
+        </Table>
       </Main>
     )
   }

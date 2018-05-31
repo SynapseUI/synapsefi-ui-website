@@ -2,7 +2,7 @@ import React from 'react';
 
 import SubSectionPageForComponents from '../../components/common/SubSectionPageForComponents';
 
-import dataForCheckboxgroup from '../../pagesData/components/dataForCheckboxgroup';
+import dataForCheckboxgroup from '../../pagesData/components/dataForCheckboxGroup';
 
 const checkboxGroup = () => {
   return (

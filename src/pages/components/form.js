@@ -4,13 +4,19 @@ import SubSectionPageForComponents from '../../components/common/SubSectionPageF
 
 import dataForForm from '../../pagesData/components/dataForForm';
 import propValuesForForm from '../../pagesData/propValues/propValuesForForm';
+import propertiesFormData from '../../pagesData/extra/propertiesFormData';
 
 const form = () => {
   return (
     <div>
       <SubSectionPageForComponents
         dataForThisPage={dataForForm}
-        propValues={propValuesForForm}
+        tableData={
+          [
+            { data: propValuesForForm }, 
+            { title: `Values for prop type 'data'`, data: propertiesFormData}
+          ]
+        }
       />
     </div>
   );

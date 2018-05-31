@@ -66,6 +66,9 @@ class SubSectionPageForComponents extends Component {
       positions: {},
       toggleTable: true
     };
+
+    this.renderTopBar = this.renderTopBar.bind(this);
+    this.renderPropValueTables = this.renderPropValueTables.bind(this);
   }
 
   componentDidMount() {
@@ -88,14 +91,14 @@ class SubSectionPageForComponents extends Component {
   }
 
   // -------------------------------------------------------------------------------------
-  // ----------------------------------- Render ------------------------------------------
+  // ----------------------------------- Render Methods ----------------------------------
   // -------------------------------------------------------------------------------------
-  render() {
-    const { dataForThisPage, propValues } = this.props;
-    return (
-      <div>
-        <TopBar showToggleTable={!!propValues}>
-          {!!propValues && <RadioGroup
+
+  renderTopBar(dataForThisPage, tableData){
+    return(
+      <TopBar showToggleTable={!!tableData}>
+        { !!tableData && 
+          <RadioGroup
             value={this.state.toggleTable}
             label='Props'
             className="toggle-props-display"
@@ -108,25 +111,48 @@ class SubSectionPageForComponents extends Component {
                 { key: false, text: 'Off' }
               ]
             }
-          />}
+          />
+        }
 
-          <SummaryMenuWrapper>
-            {dataForThisPage.map(({ title }) => {
-              if (_.isEmpty(this.state.positions)) return null;
-              const { left, top } = this.state.positions[title];
-              return (
-                <MenuItem onClick={() => this.handleMenuItemClick(top)} key={title}>
-                  {shortenTitleStr(title)}
-                </MenuItem>
-              );
-            })}
-          </SummaryMenuWrapper>
-        </TopBar>
+        <SummaryMenuWrapper>
+          {dataForThisPage.map(({ title }) => {
+            if (_.isEmpty(this.state.positions)) return null;
+            const { left, top } = this.state.positions[title];
+            return (
+              <MenuItem onClick={() => this.handleMenuItemClick(top)} key={title}>
+                {shortenTitleStr(title)}
+              </MenuItem>
+            );
+          })}
+        </SummaryMenuWrapper>
+      </TopBar>
+    )
+  }
 
+  renderPropValueTables(tableData){
+    if(!!tableData){
+      return tableData.map((entry, idx) => (
         <PropValuesTable
-          propValues={propValues}
-          toggleTable={this.state.toggleTable}
-        />
+         key={idx}
+         propValues={entry}
+         toggleTable={this.state.toggleTable}
+       />
+     ));
+    }
+
+    return null;
+  }
+
+  // -------------------------------------------------------------------------------------
+  // ----------------------------------- Render ------------------------------------------
+  // -------------------------------------------------------------------------------------
+  render() {
+    const { dataForThisPage, tableData } = this.props;
+    return (
+      <div>
+        {this.renderTopBar(dataForThisPage, tableData)}
+        
+        {this.renderPropValueTables(tableData)}
 
         {dataForThisPage.map((obj, idx) => {
           return (
