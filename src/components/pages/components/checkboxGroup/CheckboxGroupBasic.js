@@ -52,20 +52,24 @@ class CheckBoxGroupBasic extends React.Component {
 
   render(){
     return (
-      <CheckboxGroup
-        value={this.state.raining}
-        onChange={(e, value) => this.setState({
-          raining: value
-        })}
-        className='input-basic-page-row'
-        propName='raining'
-        label='Its raining:'
-        options={[
-          { key: 'CATS', text: 'Cats' },
-          { key: 'DOGS', text: 'Dogs' },
-          { key: 'BIRDS', text: 'Birds' },
-        ]}
-      />
+      <div>
+        <div className="input-display-box">
+          <CheckboxGroup
+            value={this.state.raining}
+            onChange={(e, value) => this.setState({
+              raining: value
+            })}
+            className='checkbox-group-basic-page-row'
+            propName='raining'
+            label='Its raining:'
+            options={[
+              { key: 'CATS', text: 'Cats' },
+              { key: 'DOGS', text: 'Dogs' },
+              { key: 'BIRDS', text: 'Birds' },
+            ]}
+          />
+        </div>
+      </div>
     );
   }
 };

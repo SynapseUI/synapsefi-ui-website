@@ -20,26 +20,25 @@ class JsxModalWithBtn extends Component {
     this.setState({ isOpen: false });
   }
 
+  handlePrimaryBtnClick() {
+    window.alert('primary btn clicked');
+  }
+
   renderModal() {
     const btnObjs = [
       {
         text: 'Remove',
-        btnProps: {
-          size: 'large',
-          style: 'remove',
-        },
+        size: 'large',
+        style: 'remove',
       },
       {
         text: 'Secondary',
-        btnProps: {
-          style: 'secondary',
-        },
+        style: 'secondary',
+        onClick: () => window.alert('secondary btn clicked'),
       },
       {
         text: 'primary btn',
-        btnProps: {
-          style: 'primary',
-        },
+        onClick: this.handlePrimaryBtnClick,
       },
     ];
 
@@ -61,7 +60,7 @@ class JsxModalWithBtn extends Component {
     return (
       <div>
         <Button medium onClick={this.openModal}>
-          Modal with Buttons
+          Modal w Btns
         </Button>
         {this.renderModal()}
       </div>
@@ -95,26 +94,25 @@ class JsxModalWithBtn extends Component {
     this.setState({ isOpen: false });
   }
 
+  handlePrimaryBtnClick() {
+    window.alert('primary btn clicked');
+  }
+
   renderModal() {
     const btnObjs = [
       {
         text: 'Remove',
-        btnProps: {
-          size: 'large',
-          style: 'remove',
-        },
+        size: 'large',
+        style: 'remove',
       },
       {
         text: 'Secondary',
-        btnProps: {
-          style: 'secondary',
-        },
+        style: 'secondary',
+        onClick: () => window.alert('secondary btn clicked'),
       },
       {
         text: 'primary btn',
-        btnProps: {
-          style: 'primary',
-        },
+        onClick: this.handlePrimaryBtnClick,
       },
     ];
 
@@ -136,7 +134,7 @@ class JsxModalWithBtn extends Component {
     return (
       <div>
         <Button medium onClick={this.openModal}>
-          Modal with Buttons
+          Modal w Btns
         </Button>
         {this.renderModal()}
       </div>

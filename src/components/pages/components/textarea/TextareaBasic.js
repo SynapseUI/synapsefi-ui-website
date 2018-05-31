@@ -45,20 +45,23 @@ class TextareaBasic extends React.Component {
       story: ''
     }
   }
-
   render(){
     return (
-      <Textarea
-        value={this.state.story}
-        onChange={e => this.setState({
-          story: e.target.value
-        })}
-        className='input-basic-page-row'
-        propName='story'
-        label='Life Story'
-        description='Tell me your life story'
-        placeholder="Or how is your day?"
-      />
+      <div>
+        <div className="input-display-box">
+          <Textarea
+            value={this.state.story}
+            onChange={e => this.setState({
+              story: e.target.value
+            })}
+            className='input-basic-page-row'
+            propName='story'
+            label='Life Story'
+            description='Tell me your life story'
+            placeholder="Or how is your day?"
+          />
+        </div>
+      </div>
     );
   }
 };
