@@ -2,7 +2,7 @@ const testFolder = './src/components/pages/components/buttons';
 const fs = require('fs');
 const glob = require('glob');
 
-const getFileNames = function (src, callback) {
+const getFileNames = function(src, callback) {
   glob(src + '/*/*', callback);
 };
 
@@ -29,7 +29,8 @@ getFileNames('./src/components/pages/components', (err, res) => {
 
       const content = combineAllSentenceBeforeExportDefault(sentences);
       const divider = '\n// ------------------------------------------------------------\n';
-      const jsxContent = '\nexport const jsxSnippet = `' + content + '`;' + '\n';
+      const jsxContent =
+        '\nexport const jsxSnippet = `' + content.split('`').join('\\`') + '`;' + '\n';
 
       fs.writeFileSync(fileName, content, 'utf8');
       fs.appendFileSync(fileName, divider, 'utf8');
