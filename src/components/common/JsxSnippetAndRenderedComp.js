@@ -7,7 +7,7 @@ import { dark } from 'react-syntax-highlighter/styles/prism';
 
 const JsxSnippetAndRenderedComp = ({ jsxSnippet, Component, className }) => {  
   return (
-    <div className={className || `prism-dark`}>
+    <div className={`prism-dark`}>
       <SyntaxHighlighter language="jsx" style={dark}>
         {jsxSnippet}
       </SyntaxHighlighter>
