@@ -103,8 +103,9 @@ class FormApp extends React.Component {
 
 export default FormApp;
 
-export const jsxSnippet = `
-import React from 'react';
+// ------------------------------------------------------------
+
+export const jsxSnippet = `import React from 'react';
 import styled from 'styled-components';
 
 import {
@@ -191,10 +192,10 @@ class FormApp extends React.Component {
           onChange={this.updateField}
         >
           <Input
-            key="test-input"
+            key="somejargenstufafasdf"
             value={this.state.other_preference}
             onChange={e => this.setState({
-               other_preference: e.target.value
+              other_preference: e.target.value
             })}
             onBlur={() => console.log('blur')}
             onFocus={() => console.log('focus')}
