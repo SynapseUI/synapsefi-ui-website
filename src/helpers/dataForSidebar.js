@@ -25,29 +25,32 @@ const dataForBasicsSection = [
 
 // Dashboard ----------------------------------------------------------------
 
+export const COMPONENTS_ANCHOR_BUTTON = 'anchor-button';
 export const COMPONENTS_BUTTON = 'button';
-export const COMPONENTS_SVG_ICONS = 'svg-icons';
-export const COMPONENTS_TABLE = 'table';
-export const COMPONENTS_MODAL = 'modal';
-export const COMPONENTS_INPUT = 'input';
-export const COMPONENTS_TEXTAREA = 'textarea';
-export const COMPONENTS_RADIO_GROUP = 'radio-group';
+export const COMPONENTS_BUTTON_GROUP = 'button-group';
 export const COMPONENTS_CHECKBOX_GROUP = 'checkbox-group';
 export const COMPONENTS_DROPDOWN = 'dropdown';
 export const COMPONENTS_FORM = 'form';
+export const COMPONENTS_INPUT = 'input';
+export const COMPONENTS_MODAL = 'modal';
+export const COMPONENTS_RADIO_GROUP = 'radio-group';
+export const COMPONENTS_SVG_ICONS = 'svg-icons';
+export const COMPONENTS_TABLE = 'table';
+export const COMPONENTS_TEXTAREA = 'textarea';
 
 const dataForComponentsSection = [
+  { text: 'Anchor Button', link: COMPONENTS_ANCHOR_BUTTON },
+  { text: 'Button Group', link: COMPONENTS_BUTTON_GROUP },
   { text: 'Button', link: COMPONENTS_BUTTON },
+  { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP },
+  { text: 'Dropdown', link: COMPONENTS_DROPDOWN },
+  { text: 'Form', link: COMPONENTS_FORM },
+  { text: 'Input', link: COMPONENTS_INPUT },
+  { text: 'Modal', link: COMPONENTS_MODAL },
+  { text: 'Radio Group', link: COMPONENTS_RADIO_GROUP },
   { text: 'Svg Icons', link: COMPONENTS_SVG_ICONS },
   { text: 'Table', link: COMPONENTS_TABLE },
-  { text: 'Modal', link: COMPONENTS_MODAL },
-  { text: 'Input', link: COMPONENTS_INPUT},
-  { text: 'Textarea', link: COMPONENTS_TEXTAREA},
-  { text: 'Radio Group', link: COMPONENTS_RADIO_GROUP},
-  { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP},
-  { text: 'Dropdown', link: COMPONENTS_DROPDOWN},
-  { text: 'Form', link: COMPONENTS_FORM }
-
+  { text: 'Textarea', link: COMPONENTS_TEXTAREA },
 ];
 
 // -------------------------------------------------------------------------

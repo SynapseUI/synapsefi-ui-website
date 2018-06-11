@@ -3,7 +3,6 @@ import React from 'react';
 import SubSectionPageForComponents from '../../components/common/SubSectionPageForComponents';
 
 import dataForSvgIcon from '../../pagesData/components/dataForSvgIcon';
-console.log('dataForSvgIcon: ', dataForSvgIcon);
 
 const svgIcon = () => {
   return (
