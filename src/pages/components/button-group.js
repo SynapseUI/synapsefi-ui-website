@@ -4,7 +4,7 @@ import SubSectionPageForComponents from '../../components/common/SubSectionPageF
 
 import dataForButtonGroup from '../../pagesData/components/dataForButtonGroup';
 
-const button = () => {
+const ButtonGroup = () => {
   return (
     <div>
       <SubSectionPageForComponents dataForThisPage={dataForButtonGroup} />
@@ -12,4 +12,4 @@ const button = () => {
   );
 };
 
-export default button;
+export default ButtonGroup;

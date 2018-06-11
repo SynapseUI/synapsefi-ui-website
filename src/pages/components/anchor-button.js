@@ -4,7 +4,7 @@ import SubSectionPageForComponents from '../../components/common/SubSectionPageF
 
 import dataForAnchorButton from '../../pagesData/components/dataForAnchorButton';
 
-const button = () => {
+const AnchorButton = () => {
   return (
     <div>
       <SubSectionPageForComponents dataForThisPage={dataForAnchorButton} />
@@ -12,4 +12,4 @@ const button = () => {
   );
 };
 
-export default button;
+export default AnchorButton;
