@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------------------
 // ----------------------------------- Component Import ------------------------------------
 // -----------------------------------------------------------------------------------------
-import JsxButtonGroupExamples, * as jsxButtonGroupExamples from '../../components/pages/components/buttonGroup/JsxButtonGroupExamples';
+import JsxAnchorButton, * as jsxAnchorButton from '../../components/pages/components/anchorButton/JsxAnchorButton';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ String Data ----------------------------------------
@@ -11,6 +11,4 @@ const EXAMPLES = 'Examples';
 // -----------------------------------------------------------------------------------------
 // ------------------------------------  Data ----------------------------------------------
 // -----------------------------------------------------------------------------------------
-export default [
-  { title: EXAMPLES, code: jsxButtonGroupExamples.jsxSnippet, Component: JsxButtonGroupExamples },
-];
+export default [{ title: EXAMPLES, code: jsxAnchorButton.jsxSnippet, Component: JsxAnchorButton }];

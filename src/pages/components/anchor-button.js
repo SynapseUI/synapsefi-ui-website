@@ -2,12 +2,12 @@ import React from 'react';
 
 import SubSectionPageForComponents from '../../components/common/SubSectionPageForComponents';
 
-import dataForButtonGroup from '../../pagesData/components/dataForButtonGroup';
+import dataForAnchorButton from '../../pagesData/components/dataForAnchorButton';
 
 const button = () => {
   return (
     <div>
-      <SubSectionPageForComponents dataForThisPage={dataForButtonGroup} />
+      <SubSectionPageForComponents dataForThisPage={dataForAnchorButton} />
     </div>
   );
 };
