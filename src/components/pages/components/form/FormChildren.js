@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Form, Input, Textarea, Dropdown, Colors } from 'synapsefi-ui';
+import { Form, Input, Colors } from 'synapsefi-ui';
 
 import dataForForm from './FormApp.data';
 
@@ -10,7 +10,7 @@ const Main = styled.div`
   font-family: Roboto;
 `;
 
-class FormApp extends React.Component {
+class FormChildren extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,7 +36,7 @@ class FormApp extends React.Component {
 
   handleSubmit(e) {
     if (e) e.preventDefault();
-    console.log('Submiting this.state in FormApp', this.state);
+    console.log('Submiting this.state in FormChildren', this.state);
   }
 
   render() {
@@ -47,29 +47,42 @@ class FormApp extends React.Component {
           formValues={this.state}
           handleSubmit={this.handleSubmit}
           onChange={this.updateField}
-        />
+        >
+          <Input
+            key="test-input"
+            value={this.state.other_preference}
+            onChange={e =>
+              this.setState({
+                other_preference: e.target.value,
+              })}
+            onBlur={() => console.log('blur')}
+            onFocus={() => console.log('focus')}
+            propName="other_preference"
+            label="Other Preferences"
+          />
+        </Form>
       </Main>
     );
   }
 }
 
-export default FormApp;
+export default FormChildren;
 
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
 import styled from 'styled-components';
 
-import { Form, Input, Textarea, Dropdown, Colors } from 'synapsefi-ui';
+import { Form, Input, Colors } from 'synapsefi-ui';
 
-import dataForForm from './FormApp.data';
+import dataForForm from './FormChildren.data';
 
 const Main = styled.div\`
   box-sizing: border-box;
   font-family: Roboto;
 \`;
 
-class FormApp extends React.Component {
+class FormChildren extends React.Component {
   constructor(props) {
     super(props);
 
@@ -95,7 +108,7 @@ class FormApp extends React.Component {
 
   handleSubmit(e) {
     if (e) e.preventDefault();
-    console.log('Submiting this.state in FormApp', this.state);
+    console.log('Submiting this.state in FormChildren', this.state);
   }
 
   render() {
@@ -106,7 +119,20 @@ class FormApp extends React.Component {
           formValues={this.state}
           handleSubmit={this.handleSubmit}
           onChange={this.updateField}
-        />
+        >
+          <Input
+            key="test-input"
+            value={this.state.other_preference}
+            onChange={e =>
+              this.setState({
+                other_preference: e.target.value,
+              })}
+            onBlur={() => console.log('blur')}
+            onFocus={() => console.log('focus')}
+            propName="other_preference"
+            label="Other Preferences"
+          />
+        </Form>
       </Main>
     );
   }

@@ -67,17 +67,14 @@ class SubSectionPageForComponents extends Component {
       toggleTable: true
     };
 
+    this.updatePositions = this.updatePositions.bind(this);
+
     this.renderTopBar = this.renderTopBar.bind(this);
     this.renderPropValueTables = this.renderPropValueTables.bind(this);
   }
 
   componentDidMount() {
-    const { dataForThisPage } = this.props;
-    const positions = dataForThisPage.reduce((acc, obj) => {
-      acc[obj.title] = getLeftAndTopPosition(obj.title);
-      return acc;
-    }, {});
-    this.setState({ positions });
+    this.updatePositions();
   }
 
   // -------------------------------------------------------------------------------------
@@ -88,6 +85,16 @@ class SubSectionPageForComponents extends Component {
       top: top - 100,
       behavior: 'smooth',
     });
+  }
+
+  updatePositions(){
+    const { dataForThisPage } = this.props;
+    const positions = dataForThisPage.reduce((acc, obj) => {
+      acc[obj.title] = getLeftAndTopPosition(obj.title);
+      return acc;
+    }, {});
+
+    this.setState({ positions });
   }
 
   // -------------------------------------------------------------------------------------
@@ -102,9 +109,9 @@ class SubSectionPageForComponents extends Component {
             value={this.state.toggleTable}
             label='Props'
             className="toggle-props-display"
-            onChange={(e) => this.setState({
+            onChange={() => this.setState({
               toggleTable: !this.state.toggleTable
-            })}
+            }, this.updatePositions)}
             options={
               [
                 { key: true, text: 'On' },
