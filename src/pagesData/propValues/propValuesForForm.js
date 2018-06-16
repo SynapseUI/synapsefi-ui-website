@@ -43,12 +43,6 @@ Needs to return an Object of strings matching their respective state values, for
   },
 
   {
-    name: 'rowClassName',
-    type: 'String',
-    description: `Classname that will be applied to each component. (Note: the value of className in 'data' has a higher priority than 'rowClassName')`
-  },
-
-  {
     name: 'onChange',
     type: 'Function',
     description: `Callback applied to each component and triggers during an onChange event, parameters given are element, value, and propName in that order.
@@ -67,6 +61,51 @@ Needs to return an Object of strings matching their respective state values, for
         email: this.updateEmail,
         default: this.updateField
       }}
+    `
+  },
+
+  {
+    name: 'additionalButtons',
+    type: 'Array',
+    description: `Will add additional buttons to the left of the Submit button.
+    
+      i.e. additionalButtons={
+        [
+          {
+            style: 'tertiary',
+            text: 'Cancel',
+            action: () => console.log('cancel')
+          }
+        ]
+      }
+    `
+  },
+
+  {
+    name: 'submitButtonText',
+    type: 'String',
+    description: 'Custom text for the Submit button, defaults to "Submit".'
+  },
+
+  {
+    name: 'customFooter',
+    type: 'Function (React Component)',
+    description: `Replaces the Submit button and will have access to errors and handleSubmit in props.
+    
+    i.e. customFooter={<CustomFooter/>}
+
+    // CustomFooter.js
+
+    const CustomFooter = (props) => {
+      return (
+        <div>
+          <button onClick={props.handleSubmit}>Custom Button</button>
+        </div>
+      )
+    }
+    
+    export default CustomFooter;
+
     `
   }
   

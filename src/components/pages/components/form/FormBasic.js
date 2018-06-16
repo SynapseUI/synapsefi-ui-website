@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Form, Input, Textarea, Dropdown, Colors } from 'synapsefi-ui';
+import { Form } from 'synapsefi-ui';
 
 import dataForForm from './FormApp.data';
 
@@ -60,7 +60,7 @@ export default FormApp;
 export const jsxSnippet = `import React from 'react';
 import styled from 'styled-components';
 
-import { Form, Input, Textarea, Dropdown, Colors } from 'synapsefi-ui';
+import { Form } from 'synapsefi-ui';
 
 import dataForForm from './FormApp.data';
 
