@@ -1,12 +1,3 @@
-const [TYPE_INPUT, TYPE_TEXTAREA, TYPE_CHECKBOXGROUP, TYPE_RADIOGROUP, TYPE_DROPDOWN, OTHER] = [
-  'TYPE_INPUT',
-  'TYPE_TEXTAREA',
-  'TYPE_CHECKBOXGROUP',
-  'TYPE_RADIOGROUP',
-  'TYPE_DROPDOWN',
-  'OTHER',
-];
-
 import { FormTypeConstants } from 'synapsefi-ui'
 
 const data = [
@@ -82,16 +73,7 @@ export default data;
 
 // ------------------------------------------------------------
 
-export const jsxSnippet = `const [TYPE_INPUT, TYPE_TEXTAREA, TYPE_CHECKBOXGROUP, TYPE_RADIOGROUP, TYPE_DROPDOWN, OTHER] = [
-  'TYPE_INPUT',
-  'TYPE_TEXTAREA',
-  'TYPE_CHECKBOXGROUP',
-  'TYPE_RADIOGROUP',
-  'TYPE_DROPDOWN',
-  'OTHER',
-];
-
-import { FormTypeConstants } from 'synapsefi-ui'
+export const jsxSnippet = `import { FormTypeConstants } from 'synapsefi-ui'
 
 const data = [
   {

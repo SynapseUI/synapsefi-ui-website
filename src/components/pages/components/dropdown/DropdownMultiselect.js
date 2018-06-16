@@ -6,7 +6,7 @@ class DropdownMultiselect extends React.Component {
     super(props);
 
     this.state = {
-      animals: []
+      animals: [] //value must be an Array
     }
   }
 
@@ -21,7 +21,7 @@ class DropdownMultiselect extends React.Component {
               animal: value
             })}
             className='input-basic-page-row'
-            propName='animal'
+            propName='animals'
             label='Favorite Animals:'
             placeholder='Pick as many as you want'
             options={[
@@ -52,7 +52,7 @@ class DropdownMultiselect extends React.Component {
     super(props);
 
     this.state = {
-      animal: ''
+      animals: [] //value must be an Array
     }
   }
 
@@ -61,15 +61,15 @@ class DropdownMultiselect extends React.Component {
       <div>
         <div className="input-display-box">
           <Dropdown
-            value={this.state.animal}
-            searchable
+            value={this.state.animals}
+            multiselect
             onChange={(e, value) => this.setState({
               animal: value
             })}
             className='input-basic-page-row'
-            placeholder='Type here to filter'
-            propName='animal'
-            label='Favorite Animal:'
+            propName='animals'
+            label='Favorite Animals:'
+            placeholder='Pick as many as you want'
             options={[
               { key: 'PIG', text: 'Pig' },
               { key: 'ELEPHANT', text: 'Elephant' },
