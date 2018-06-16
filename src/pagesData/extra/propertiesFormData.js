@@ -55,4 +55,19 @@ export default [
     description: 'Will style the component with a disabled status.'
   },
 
+  {
+    name: 'onClick, onFocus, onBlur, etc.',
+    type: 'Function',
+    description: `React events that will be given the element, value and propName in the respective order.
+    
+      i.e. onChange={(e, value, propName) => console.log(e, value, propName)}
+    `
+  },
+
+  {
+    name: 'props',
+    type: 'Anything',
+    description: 'All other values of an data entry will be passed down as props, i.e. autofocus.'
+  }
+
 ]

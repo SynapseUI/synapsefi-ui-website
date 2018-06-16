@@ -7,6 +7,8 @@ import _ from 'lodash';
 // ------------------------------------ Import Components ----------------------------------
 // -----------------------------------------------------------------------------------------
 
+import SideBarMenu from './SidebarRelated/SideBarMenu';
+
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
 // -----------------------------------------------------------------------------------------
@@ -88,12 +90,11 @@ const Sidebar = ({ siteTitle }) => {
       <SectionWrapper>
         {_.map(dataForSidebar, (sectionVal, sectionKey) => {
           return (
-            <div key={sectionKey}>
-              <SectionText className="font-sidebar font-sidebar--section">
-                {sectionVal[SECTION_TEXT]}
-              </SectionText>
-              {renderSubsections(sectionVal[SUB_SECTIONS])}
-            </div>
+            <SideBarMenu
+              key={sectionKey}
+              sectionVal={sectionVal}
+              sectionKey={sectionKey}
+            />
           );
         })}
       </SectionWrapper>

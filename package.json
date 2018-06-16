@@ -8,6 +8,7 @@
   ],
   "main": "index.js",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
     "faker": "^4.1.0",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",

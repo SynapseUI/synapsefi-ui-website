@@ -1,12 +1,12 @@
 import React from 'react';
 import { Dropdown } from 'synapsefi-ui';
 
-class DropdownSearch extends React.Component {
+class DropdownMultiselect extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      animal: ''
+      animals: [] //value must be an Array
     }
   }
 
@@ -15,15 +15,15 @@ class DropdownSearch extends React.Component {
       <div>
         <div className="input-display-box">
           <Dropdown
-            value={this.state.animal}
-            searchable
+            value={this.state.animals}
+            multiselect
             onChange={(e, value) => this.setState({
               animal: value
             })}
             className='input-basic-page-row'
-            placeholder='Type here to filter'
-            propName='animal'
-            label='Favorite Animal:'
+            propName='animals'
+            label='Favorite Animals:'
+            placeholder='Pick as many as you want'
             options={[
               { key: 'PIG', text: 'Pig' },
               { key: 'ELEPHANT', text: 'Elephant' },
@@ -40,19 +40,19 @@ class DropdownSearch extends React.Component {
   }
 };
 
-export default DropdownSearch;
+export default DropdownMultiselect;
 
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
 import { Dropdown } from 'synapsefi-ui';
 
-class DropdownSearch extends React.Component {
+class DropdownMultiselect extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      animal: ''
+      animals: [] //value must be an Array
     }
   }
 
@@ -61,15 +61,15 @@ class DropdownSearch extends React.Component {
       <div>
         <div className="input-display-box">
           <Dropdown
-            value={this.state.animal}
-            searchable
+            value={this.state.animals}
+            multiselect
             onChange={(e, value) => this.setState({
               animal: value
             })}
             className='input-basic-page-row'
-            placeholder='Type here to filter'
-            propName='animal'
-            label='Favorite Animal:'
+            propName='animals'
+            label='Favorite Animals:'
+            placeholder='Pick as many as you want'
             options={[
               { key: 'PIG', text: 'Pig' },
               { key: 'ELEPHANT', text: 'Elephant' },
@@ -86,5 +86,5 @@ class DropdownSearch extends React.Component {
   }
 };
 
-export default DropdownSearch;
+export default DropdownMultiselect;
 `;

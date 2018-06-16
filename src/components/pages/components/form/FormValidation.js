@@ -10,7 +10,7 @@ const Main = styled.div`
   font-family: Roboto;
 `;
 
-class FormApp extends React.Component {
+class FormValidation extends React.Component {
   constructor(props) {
     super(props);
 
@@ -25,6 +25,7 @@ class FormApp extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleErrorCheck = this.handleErrorCheck.bind(this);
     this.updateField = this.updateField.bind(this);
   }
 
@@ -34,9 +35,23 @@ class FormApp extends React.Component {
     }
   }
 
+  handleErrorCheck() {
+    let errors = {};
+
+    if (this.state.email === 'test@email.com') {
+      errors['email'] = 'Input a real email address -_-';
+    }
+
+    Object.keys(this.state).forEach(item => {
+      if (_.isEmpty(this.state[item])) errors[item] = 'Field is required';
+    });
+
+    return errors;
+  }
+
   handleSubmit(e) {
     if (e) e.preventDefault();
-    console.log('Submiting this.state in FormApp', this.state);
+    console.log('Submiting this.state in FormValidation', this.state);
   }
 
   render() {
@@ -46,6 +61,7 @@ class FormApp extends React.Component {
           data={dataForForm}
           formValues={this.state}
           handleSubmit={this.handleSubmit}
+          validation={this.handleErrorCheck}
           onChange={this.updateField}
         />
       </Main>
@@ -53,7 +69,7 @@ class FormApp extends React.Component {
   }
 }
 
-export default FormApp;
+export default FormValidation;
 
 // ------------------------------------------------------------
 
@@ -69,7 +85,7 @@ const Main = styled.div\`
   font-family: Roboto;
 \`;
 
-class FormApp extends React.Component {
+class FormValidation extends React.Component {
   constructor(props) {
     super(props);
 
@@ -84,6 +100,7 @@ class FormApp extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleErrorCheck = this.handleErrorCheck.bind(this);
     this.updateField = this.updateField.bind(this);
   }
 
@@ -93,9 +110,23 @@ class FormApp extends React.Component {
     }
   }
 
+  handleErrorCheck() {
+    let errors = {};
+
+    if (this.state.email === 'test@email.com') {
+      errors['email'] = 'Input a real email address -_-';
+    }
+
+    Object.keys(this.state).forEach(item => {
+      if (_.isEmpty(this.state[item])) errors[item] = 'Field is required';
+    });
+
+    return errors;
+  }
+
   handleSubmit(e) {
     if (e) e.preventDefault();
-    console.log('Submiting this.state in FormApp', this.state);
+    console.log('Submiting this.state in FormValidation', this.state);
   }
 
   render() {
@@ -105,6 +136,7 @@ class FormApp extends React.Component {
           data={dataForForm}
           formValues={this.state}
           handleSubmit={this.handleSubmit}
+          validation={this.handleErrorCheck}
           onChange={this.updateField}
         />
       </Main>
@@ -112,5 +144,5 @@ class FormApp extends React.Component {
   }
 }
 
-export default FormApp;
+export default FormValidation;
 `;
