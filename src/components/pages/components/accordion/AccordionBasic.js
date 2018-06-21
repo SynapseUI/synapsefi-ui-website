@@ -5,9 +5,6 @@ class AccordionBasic extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      elevator: ''
-    }
   }
 
   renderHeader(){
@@ -20,7 +17,7 @@ class AccordionBasic extends React.Component {
     return (
       <div>
         <div className="input-display-box">
-          <Accordion header="some header   asdfsdf">
+          <Accordion header="some header">
             <p>Cool Content asflaksfdjl </p>
           </Accordion>
 

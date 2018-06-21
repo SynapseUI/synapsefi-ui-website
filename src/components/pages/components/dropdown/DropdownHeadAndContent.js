@@ -17,7 +17,7 @@ class DropdownHeadAndContent extends React.Component {
           <DropdownHead
             style={{ width: '200px'}}
             onClick={() => this.setState({ hide: !this.state.hide })}>
-            <p>Header asdf</p>
+            <p>Header</p>
           </DropdownHead>
 
           <DropdownContent
