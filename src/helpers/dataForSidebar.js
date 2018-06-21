@@ -30,6 +30,7 @@ export const COMPONENTS_BUTTON = 'button';
 export const COMPONENTS_BUTTON_GROUP = 'button-group';
 export const COMPONENTS_CHECKBOX_GROUP = 'checkbox-group';
 export const COMPONENTS_DROPDOWN = 'dropdown';
+export const COMPONENTS_ACCORDION = 'accordion';
 export const COMPONENTS_FORM = 'form';
 export const COMPONENTS_INPUT = 'input';
 export const COMPONENTS_MODAL = 'modal';
@@ -44,6 +45,7 @@ const dataForComponentsSection = [
   { text: 'Button', link: COMPONENTS_BUTTON },
   { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP },
   { text: 'Dropdown', link: COMPONENTS_DROPDOWN },
+  { text: 'Accordion', link: COMPONENTS_ACCORDION },
   { text: 'Form', link: COMPONENTS_FORM },
   { text: 'Input', link: COMPONENTS_INPUT },
   { text: 'Modal', link: COMPONENTS_MODAL },
