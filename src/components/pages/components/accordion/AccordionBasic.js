@@ -18,7 +18,7 @@ class AccordionBasic extends React.Component {
       <div>
         <div className="input-display-box">
           <Accordion header="some header">
-            <p>Cool Content asflaksfdjl </p>
+            <p>Cool Content</p>
           </Accordion>
 
           <br/>
