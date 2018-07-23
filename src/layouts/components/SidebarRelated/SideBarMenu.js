@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import _ from 'lodash';
+import { Accordion } from 'synapsefi-ui';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
@@ -25,8 +26,7 @@ const SectionText = styled.div`
 `;
 
 const SubSectionWrapper = styled.div`
-  margin-top: 1.5rem;
-  margin-left: 1.5rem;
+  padding: 1rem 2rem;
   display: grid;
   grid-gap: 1rem;
 `;
@@ -74,12 +74,13 @@ class SideBarMenu extends React.Component {
 
     return(
       <div >
-        <SectionText
-          className="font-sidebar font-sidebar--section"
-          onClick={() => this.setState({ showContent: !this.state.showContent })}>
-          {sectionVal[SECTION_TEXT]}
-        </SectionText>
-        {this.renderSubsections(sectionVal[SUB_SECTIONS])}
+        <Accordion header={
+          <SectionText className="font-sidebar font-sidebar--section">
+            {sectionVal[SECTION_TEXT]}
+          </SectionText>
+        }>
+          {this.renderSubsections(sectionVal[SUB_SECTIONS])}
+        </Accordion>
       </div>
     )
   }
