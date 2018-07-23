@@ -75,7 +75,7 @@ import styled from 'styled-components';
 
 import { Form, Input, Colors } from 'synapsefi-ui';
 
-import dataForForm from './FormChildren.data';
+import dataForForm from './FormApp.data';
 
 const Main = styled.div\`
   box-sizing: border-box;
@@ -138,5 +138,5 @@ class FormChildren extends React.Component {
   }
 }
 
-export default FormApp;
+export default FormChildren;
 `;

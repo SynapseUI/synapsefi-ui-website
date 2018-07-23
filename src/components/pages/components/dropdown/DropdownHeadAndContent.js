@@ -61,7 +61,7 @@ class DropdownHeadAndContent extends React.Component {
           <DropdownContent
             showContent={this.state.hide}
             verticalOffset='16px'
-            style={{ width: '250px'}}>
+            style={{ width: '250px', padding: '16px'}}>
             <p>Content</p>
           </DropdownContent>
         </div>

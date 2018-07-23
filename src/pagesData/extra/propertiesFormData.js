@@ -5,6 +5,7 @@ export default [
     description: `The value of formType defines the component of the data entry. Types include:
 
         'TYPE_INPUT': <Input>
+        'TYPE_NUMBERINPUT': <NumberInput>
         'TYPE_TEXTAREA': <Textarea>
         'TYPE_CHECKBOXGROUP': <CheckboxGroup>
         'TYPE_RADIOGROUP': <RadioGroup>
@@ -62,6 +63,12 @@ export default [
     
       i.e. onChange={(e, value, propName) => console.log(e, value, propName)}
     `
+  },
+
+  {
+    name: 'isChild',
+    type: 'String',
+    description: 'Indicator for Form to pop off the top of the children list.'
   },
 
   {

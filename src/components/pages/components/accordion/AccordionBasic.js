@@ -36,16 +36,13 @@ export default AccordionBasic;
 
 // ------------------------------------------------------------
 
-export const jsxSnippet = `mport React from 'react';
+export const jsxSnippet = `import React from 'react';
 import { Accordion } from 'synapsefi-ui';
 
 class AccordionBasic extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      elevator: ''
-    }
   }
 
   renderHeader(){
@@ -58,8 +55,8 @@ class AccordionBasic extends React.Component {
     return (
       <div>
         <div className="input-display-box">
-          <Accordion header="some header   asdfsdf">
-            <p>Cool Content asflaksfdjl </p>
+          <Accordion header="some header">
+            <p>Cool Content</p>
           </Accordion>
 
           <br/>
