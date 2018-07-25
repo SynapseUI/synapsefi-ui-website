@@ -50,23 +50,19 @@ class SideBarMenu extends React.Component {
   }
 
   renderSubsections = subSections => {    
-    if (this.state.showContent){
-      return (
-        <SubSectionWrapper>
-          {_.map(subSections, (subSectionVal, subSectionKey) => {
-            return (
-              <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
-                <SubSectionText className="font-sidebar font-sidebar--sub-section">
-                  {subSectionVal[SUB_SECTION_TEXT]}
-                </SubSectionText>
-              </Link>
-            );
-          })}
-        </SubSectionWrapper>
-      );
-    }
-
-    return null;
+    return (
+      <SubSectionWrapper>
+        {_.map(subSections, (subSectionVal, subSectionKey) => {
+          return (
+            <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
+              <SubSectionText className="font-sidebar font-sidebar--sub-section">
+                {subSectionVal[SUB_SECTION_TEXT]}
+              </SubSectionText>
+            </Link>
+          );
+        })}
+      </SubSectionWrapper>
+    );
   };
 
   render(){
