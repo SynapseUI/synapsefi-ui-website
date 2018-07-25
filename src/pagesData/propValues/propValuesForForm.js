@@ -65,6 +65,18 @@ Needs to return an Object of strings matching their respective state values, for
   },
 
   {
+    name: 'errors',
+    type: 'Object',
+    description: 'Default set of errors to go into Form.'
+  },
+
+  {
+    name: 'displayErrorsInstantly',
+    type: 'Boolean',
+    description: 'Will ignore the wait for submission attempt and will render the errors instantly.'
+  },
+
+  {
     name: 'additionalButtons',
     type: 'Array',
     description: `Will add additional buttons to the left of the Submit button.
@@ -90,13 +102,15 @@ Needs to return an Object of strings matching their respective state values, for
   {
     name: 'customFooter',
     type: 'Function (React Component)',
-    description: `Replaces the Submit button and will have access to errors and handleSubmit in props.
+    description: `Replaces the Submit button and will have access to the data entry, errors and handleSubmit in props.
     
     i.e. customFooter={<CustomFooter/>}
 
     // CustomFooter.js
 
     const CustomFooter = (props) => {
+      const { item, error } = props;
+
       return (
         <div>
           <button onClick={props.handleSubmit}>Custom Button</button>

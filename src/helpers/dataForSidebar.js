@@ -7,6 +7,7 @@ export const SUB_SECTION_LINK = 'SUB_SECTION_LINK';
 
 export const BASICS = 'basics';
 export const COMPONENTS = 'components';
+export const FORM_COMPONENTS = 'form-components';
 // export const UIAAS = 'uiaas';
 
 // Basics --------------------------------------------------------------------
@@ -28,30 +29,38 @@ const dataForBasicsSection = [
 export const COMPONENTS_ANCHOR_BUTTON = 'anchor-button';
 export const COMPONENTS_BUTTON = 'button';
 export const COMPONENTS_BUTTON_GROUP = 'button-group';
-export const COMPONENTS_CHECKBOX_GROUP = 'checkbox-group';
-export const COMPONENTS_DROPDOWN = 'dropdown';
 export const COMPONENTS_ACCORDION = 'accordion';
-export const COMPONENTS_FORM = 'form';
-export const COMPONENTS_INPUT = 'input';
 export const COMPONENTS_MODAL = 'modal';
-export const COMPONENTS_RADIO_GROUP = 'radio-group';
 export const COMPONENTS_SVG_ICONS = 'svg-icons';
 export const COMPONENTS_TABLE = 'table';
-export const COMPONENTS_TEXTAREA = 'textarea';
 
 const dataForComponentsSection = [
   { text: 'Anchor Button', link: COMPONENTS_ANCHOR_BUTTON },
   { text: 'Button Group', link: COMPONENTS_BUTTON_GROUP },
   { text: 'Button', link: COMPONENTS_BUTTON },
-  { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP },
-  { text: 'Dropdown', link: COMPONENTS_DROPDOWN },
   { text: 'Accordion', link: COMPONENTS_ACCORDION },
-  { text: 'Form', link: COMPONENTS_FORM },
-  { text: 'Input', link: COMPONENTS_INPUT },
   { text: 'Modal', link: COMPONENTS_MODAL },
-  { text: 'Radio Group', link: COMPONENTS_RADIO_GROUP },
   { text: 'Svg Icons', link: COMPONENTS_SVG_ICONS },
   { text: 'Table', link: COMPONENTS_TABLE },
+];
+
+// Form --------------------------------------------------------------------
+
+export const COMPONENTS_CHECKBOX_GROUP = 'checkbox-group';
+export const COMPONENTS_DROPDOWN = 'dropdown';
+export const COMPONENTS_FORM = 'form';
+export const COMPONENTS_INPUT = 'input';
+export const COMPONENTS_NUMBER_INPUT = 'number-input';
+export const COMPONENTS_RADIO_GROUP = 'radio-group';
+export const COMPONENTS_TEXTAREA = 'textarea';
+
+const dataForFormComponentsSection = [
+  { text: 'Checkbox Group', link: COMPONENTS_CHECKBOX_GROUP },
+  { text: 'Dropdown', link: COMPONENTS_DROPDOWN },
+  { text: 'Form', link: COMPONENTS_FORM },
+  { text: 'Input', link: COMPONENTS_INPUT },
+  { text: 'Number Input', link: COMPONENTS_NUMBER_INPUT },
+  { text: 'Radio Group', link: COMPONENTS_RADIO_GROUP },
   { text: 'Textarea', link: COMPONENTS_TEXTAREA },
 ];
 
@@ -70,9 +79,11 @@ const injectSubSectionData = (subsectionData, dataForSidebar, sectionName) => {
 const dataForSidebar = {
   [BASICS]: { [SECTION_TEXT]: 'Basics', [SUB_SECTIONS]: {} },
   [COMPONENTS]: { [SECTION_TEXT]: 'Components', [SUB_SECTIONS]: {} },
+  [FORM_COMPONENTS]: { [SECTION_TEXT]: 'Form Components', [SUB_SECTIONS]: {}}
 };
 
 injectSubSectionData(dataForBasicsSection, dataForSidebar, BASICS);
 injectSubSectionData(dataForComponentsSection, dataForSidebar, COMPONENTS);
+injectSubSectionData(dataForFormComponentsSection, dataForSidebar, FORM_COMPONENTS);
 
 export default dataForSidebar;
