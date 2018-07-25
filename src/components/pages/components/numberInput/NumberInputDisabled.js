@@ -34,9 +34,9 @@ export default NumberInputDisabled;
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
-import { Input } from 'synapsefi-ui';
+import { NumberInput } from 'synapsefi-ui';
 
-class InputDisabled extends React.Component {
+class NumberInputDisabled extends React.Component {
   constructor(props){
     super(props);
 
@@ -48,7 +48,7 @@ class InputDisabled extends React.Component {
     return (
       <div>
         <div className="input-display-box">
-          <Input
+          <NumberInput
             value={this.state.staticText}
             disabled
             onChange={e => this.setState({
@@ -64,5 +64,5 @@ class InputDisabled extends React.Component {
   }
 };
 
-export default InputDisabled;
+export default NumberInputDisabled;
 `;

@@ -40,9 +40,9 @@ export default NumberInputError;
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
-import { Input } from 'synapsefi-ui';
+import { NumberInput } from 'synapsefi-ui';
 
-class InputError extends React.Component {
+class NumberInputError extends React.Component {
   constructor(props){
     super(props);
 
@@ -58,7 +58,7 @@ class InputError extends React.Component {
     return (
       <div>
         <div className="input-display-box">
-          <Input
+          <NumberInput
             value={this.state.errorInput}
             onChange={e => this.setState({
               errorInput: e.target.value
@@ -76,5 +76,5 @@ class InputError extends React.Component {
   }
 };
 
-export default InputError;
+export default NumberInputError;
 `;

@@ -73,10 +73,6 @@ class NumberInputBasic extends React.Component {
             value={this.state.regular}
             onChange={this.updateField}
             label="Regular"
-            /* Set a Custom Format without a type value
-              i.e. format="###"
-            **/
-
           />
         </div>
       </div>
@@ -89,7 +85,21 @@ export default NumberInputBasic;
 // ------------------------------------------------------------
 
 export const jsxSnippet = `import React from 'react';
-import { Input } from 'synapsefi-ui';
+import styled from 'styled-components';
+import { NumberInput } from 'synapsefi-ui';
+
+const MainLayout = styled.div\`
+  & > * {
+    padding: 32px 16px;
+  }
+
+  box-sizing: border-box;
+  font-family: Roboto;
+
+  display: flex;
+  flex-direction: column;
+\`;
+
 
 class NumberInputBasic extends React.Component {
   constructor(props){
@@ -98,7 +108,8 @@ class NumberInputBasic extends React.Component {
     this.state = {
       phoneNumber: '',
       amount: '',
-      date: ''
+      date: '',
+      regular: ''
     }
 
     this.updateField = this.updateField.bind(this);
@@ -112,33 +123,45 @@ class NumberInputBasic extends React.Component {
 
   render(){
     return (
-      <MainLayout>
-        <NumberInput
-          className="custom-number-input"
-          propName="phoneNumber"
-          value={this.state.phoneNumber}
-          onChange={this.updateField}
-          label="Phone Number"
-          type="phone"
-          error="I Am Error"
-        />
+      <div>
+        <div className="input-display-box">
+          <NumberInput
+            className='input-basic-page-row'
+            propName="phoneNumber"
+            value={this.state.phoneNumber}
+            onChange={this.updateField}
+            label="Phone Number"
+            type="phone"
+            error="I Am Error"
+          />
 
-        <NumberInput
-          propName="amount"
-          value={this.state.amount}
-          onChange={this.updateField}
-          label="Amount"
-          type="currency"
-        />
+          <NumberInput
+            className='input-basic-page-row'
+            propName="amount"
+            value={this.state.amount}
+            onChange={this.updateField}
+            label="Amount"
+            type="currency"
+          />
 
-        <NumberInput
-          propName="date"
-          value={this.state.date}
-          onChange={this.updateField}
-          label="Date"
-          type="date"
-        />
-      </MainLayout>
+          <NumberInput
+            className='input-basic-page-row'
+            propName="date"
+            value={this.state.date}
+            onChange={this.updateField}
+            label="Date"
+            type="date"
+          />
+
+          <NumberInput
+            className='input-basic-page-row'
+            propName="regular"
+            value={this.state.regular}
+            onChange={this.updateField}
+            label="Regular"
+          />
+        </div>
+      </div>
     )
   }
 };
