@@ -22,7 +22,8 @@ class NumberInputBasic extends React.Component {
     this.state = {
       phoneNumber: '',
       amount: '',
-      date: ''
+      date: '',
+      regular: ''
     }
 
     this.updateField = this.updateField.bind(this);
@@ -64,6 +65,18 @@ class NumberInputBasic extends React.Component {
             onChange={this.updateField}
             label="Date"
             type="date"
+          />
+
+          <NumberInput
+            className='input-basic-page-row'
+            propName="regular"
+            value={this.state.regular}
+            onChange={this.updateField}
+            label="Regular"
+            /* Set a Custom Format without a type value
+              i.e. format="###"
+            **/
+
           />
         </div>
       </div>

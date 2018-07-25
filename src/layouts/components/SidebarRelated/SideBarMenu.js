@@ -40,6 +40,10 @@ const SubSectionText = styled.div`
   }
 `;
 
+const StyledAccordion = styled(Accordion)`
+  border-top: none;
+`;
+
 class SideBarMenu extends React.Component {
   constructor(props){
     super(props);
@@ -69,15 +73,13 @@ class SideBarMenu extends React.Component {
     const { sectionVal, sectionKey } = this.props;
 
     return(
-      <div >
-        <Accordion header={
-          <SectionText className="font-sidebar font-sidebar--section">
-            {sectionVal[SECTION_TEXT]}
-          </SectionText>
-        }>
-          {this.renderSubsections(sectionVal[SUB_SECTIONS])}
-        </Accordion>
-      </div>
+      <StyledAccordion header={
+        <SectionText className="font-sidebar font-sidebar--section">
+          {sectionVal[SECTION_TEXT]}
+        </SectionText>
+      }>
+        {this.renderSubsections(sectionVal[SUB_SECTIONS])}
+      </StyledAccordion>
     )
   }
 }

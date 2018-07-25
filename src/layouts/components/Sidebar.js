@@ -25,7 +25,10 @@ import dataForSidebar, {
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
+
+  overflow-y: scroll;
 
   margin-top: var(--height-header);
 
@@ -41,7 +44,6 @@ const SectionWrapper = styled.div`
   padding: 3rem 3rem;
 
   display: grid;
-  grid-gap: 2rem;
 `;
 
 const SectionText = styled.div`padding: var(--padding-sidebar-section);`;
