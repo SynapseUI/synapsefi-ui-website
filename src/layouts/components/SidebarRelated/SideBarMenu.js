@@ -37,10 +37,11 @@ class SideBarMenu extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { showContent: true };
+    this.state = { showContent: false };
   }
 
   toggleShowContent = () => {
+    console.log('?');
     this.setState(prevState => ({ showContent: !prevState.showContent }));
   };
 

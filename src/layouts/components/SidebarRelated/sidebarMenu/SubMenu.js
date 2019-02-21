@@ -5,10 +5,7 @@ import Link from 'gatsby-link';
 // -----------------------------------------------------------------------------------------
 // ----------------------------------------- Data ------------------------------------------
 // -----------------------------------------------------------------------------------------
-import {
-  SUB_SECTION_TEXT,
-  SUB_SECTION_LINK,
-} from '../../../../helpers/dataForSidebar';
+import { SUB_SECTION_TEXT, SUB_SECTION_LINK } from '../../../../helpers/dataForSidebar';
 
 // -----------------------------------------------------------------------------------------
 // ---------------------------------- Styled Components ------------------------------------
@@ -29,15 +26,21 @@ const SubSectionText = styled.div`
 `;
 
 const SubMenu = ({ subSections }) => {
+  const stopProp = e => {
+    e.stopPropagation();
+  };
+
   return (
     <SubSectionWrapper>
       {_.map(subSections, (subSectionVal, subSectionKey) => {
         return (
-          <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
-            <SubSectionText className="font-sidebar font-sidebar--sub-section">
-              {subSectionVal[SUB_SECTION_TEXT]}
-            </SubSectionText>
-          </Link>
+          <div onClick={stopProp} key={subSectionKey}>
+            <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
+              <SubSectionText className="font-sidebar font-sidebar--sub-section">
+                {subSectionVal[SUB_SECTION_TEXT]}
+              </SubSectionText>
+            </Link>
+          </div>
         );
       })}
     </SubSectionWrapper>
