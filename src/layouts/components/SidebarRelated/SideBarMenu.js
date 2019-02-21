@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+
 import _ from 'lodash';
 import { Accordion } from 'synapsefi-ui';
+
+// -----------------------------------------------------------------------------------------
+// ----------------------------------- Component Import ------------------------------------
+// -----------------------------------------------------------------------------------------
+import SubMenu from './sidebarMenu/SubMenu';
 
 // -----------------------------------------------------------------------------------------
 // ------------------------------------ Data Import ----------------------------------------
@@ -19,25 +24,9 @@ import {
 // ------------------------------------ Styled Components ----------------------------------
 // -----------------------------------------------------------------------------------------
 
-
 const SectionText = styled.div`
   padding: var(--padding-sidebar-section);
   cursor: pointer;
-`;
-
-const SubSectionWrapper = styled.div`
-  padding: 1rem 2rem;
-  display: grid;
-  grid-gap: 1rem;
-`;
-
-const SubSectionText = styled.div`
-  padding: var(--padding-sidebar-sub-section);
-  margin: var(--margin-sidebar-sub-section);
-
-  &:hover {
-    color: var(--color-teal);
-  }
 `;
 
 const StyledAccordion = styled(Accordion)`
@@ -45,42 +34,33 @@ const StyledAccordion = styled(Accordion)`
 `;
 
 class SideBarMenu extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = { showContent: true };
-
-    this.renderSubsections = this.renderSubsections.bind(this);
   }
 
-  renderSubsections = subSections => {    
-    return (
-      <SubSectionWrapper>
-        {_.map(subSections, (subSectionVal, subSectionKey) => {
-          return (
-            <Link to={subSectionVal[SUB_SECTION_LINK]} key={subSectionKey}>
-              <SubSectionText className="font-sidebar font-sidebar--sub-section">
-                {subSectionVal[SUB_SECTION_TEXT]}
-              </SubSectionText>
-            </Link>
-          );
-        })}
-      </SubSectionWrapper>
-    );
+  toggleShowContent = () => {
+    this.setState(prevState => ({ showContent: !prevState.showContent }));
   };
 
-  render(){
-    const { sectionVal, sectionKey } = this.props;
+  render() {
+    const { showContent } = this.state;
+    const { sectionVal } = this.props;
 
-    return(
-      <StyledAccordion header={
-        <SectionText className="font-sidebar font-sidebar--section">
-          {sectionVal[SECTION_TEXT]}
-        </SectionText>
-      }>
-        {this.renderSubsections(sectionVal[SUB_SECTIONS])}
+    return (
+      <StyledAccordion
+        onClick={this.toggleShowContent}
+        showContent={showContent}
+        header={
+          <SectionText className="font-sidebar font-sidebar--section">
+            {sectionVal[SECTION_TEXT]}
+          </SectionText>
+        }
+      >
+        <SubMenu subSections={sectionVal[SUB_SECTIONS]} />
       </StyledAccordion>
-    )
+    );
   }
 }
 
